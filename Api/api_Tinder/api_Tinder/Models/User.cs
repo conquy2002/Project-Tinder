@@ -8,5 +8,9 @@ namespace api_Tinder.Models
         public int ID { get; set; }
         public string Name { get; set; }
         public string UserAvatarBase64String { get; set; }
+        public string Age { get; set; }
+        public string City { get; set; }
+        public string Note { get; set; }
+
     }
 }
