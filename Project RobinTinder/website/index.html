@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <title>Robin Hẹn hò</title>
+    <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+    <div class="main">
+        <aside class="nav">
+            <div class="nav__header">
+                <div class="nav__hearder--profile">
+                    <a href="#">
+                        <img src = "https://scontent.fhph1-3.fna.fbcdn.net/v/t1.6435-1/c1.64.198.199a/p200x200/141433767_1108249559690088_990288042436184426_n.jpg?_nc_cat=107&ccb=1-5&_nc_sid=7206a8&_nc_ohc=5yxEM9Iimv0AX_4k7Ox&_nc_ht=scontent.fhph1-3.fna&oh=00_AT-vqYdzU7_RG4YwBws_REoHUQ_G1kzl29AkfIijrbwnXg&oe=61FCEA38">
+                        <h3>Đông</h3>
+                    </a>
+                </div>
+                <div class="nav__header--contact"></div>
+            </div>
+            <div class="nav__qc"></div>
+            <div class="nav_content">
+                <div class="nav_content-button">
+                    <button type="button" class="nav-button nav-active" data-value = "ket_noi"><spam>Kết Nối</spam></button>
+                    <button type="button" class="nav-button" data-value = "tin_nhan"><spam>Tin Nhắn</spam></button>
+                </div>
+                <div class="nav__content-main" id = "js_nav_content_main"></div>
+            </div>
+        </aside>
+        <div class="content">
+            <div class="content__profile">
+                <div class="menu" id="js_menu_imgs"></div>
+                <div class="content__profile-imgs" id="js_imgs_profile"></div>
+                <div class="slide_button">
+                    <i class='bx bx-chevron-left' onclick="plusDivs(-1)"></i>
+                    <i class='bx bx-chevron-right' onclick="plusDivs(1)"></i>
+                </div>
+                <div class="content__tt">
+                    <div class="content__tt-i" style = " color: #ffffff ; border: 1px solid #ffffff;"><i class='bx bx-revision' ></i></div>
+                    <div class="content__tt-i" style = " color:#29e2ba ; border: 1px solid #29e2ba"><i class='bx bx-x'></i></div>
+                    <div class="content__tt-i" style = " color: #fa4159 ;  border: 1px solid #fa4159"><i class='bx bxs-heart'></i></div>
+                </div>
+            </div>
+            <div class="content_hd">
+                <button>Ẩn</button>
+                <i class='bx bx-chevron-left-square'><span>Không</span></i>
+                <i class='bx bx-chevron-right-square'>T<span>hích</span></i>
+                <i class='bx bx-chevron-up-square'><span>Mở Hồ Sơ</span> </i>
+                <i class='bx bx-chevron-down-square'><span>Đóng Hồ Sơ</span> </i>
+                <i class='bx bx-space-bar'><span>Ảnh tiếp theo</span></i>
+            </div>
+        </div>
+    </div>
+</body>
+<script  type="text/javascript" src ="./js/main.js" ></script>
+</html>
