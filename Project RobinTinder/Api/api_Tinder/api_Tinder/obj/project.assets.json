@@ -10164,11 +10164,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Project-Tinder\\Api\\api_Tinder\\api_Tinder\\api_Tinder.csproj",
+      "projectUniqueName": "E:\\Project-Tinder\\Project RobinTinder\\Api\\api_Tinder\\api_Tinder\\api_Tinder.csproj",
       "projectName": "api_Tinder",
-      "projectPath": "E:\\Project-Tinder\\Api\\api_Tinder\\api_Tinder\\api_Tinder.csproj",
+      "projectPath": "E:\\Project-Tinder\\Project RobinTinder\\Api\\api_Tinder\\api_Tinder\\api_Tinder.csproj",
       "packagesPath": "C:\\Users\\dong\\.nuget\\packages\\",
-      "outputPath": "E:\\Project-Tinder\\Api\\api_Tinder\\api_Tinder\\obj\\",
+      "outputPath": "E:\\Project-Tinder\\Project RobinTinder\\Api\\api_Tinder\\api_Tinder\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

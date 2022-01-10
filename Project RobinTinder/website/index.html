@@ -5,37 +5,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+	<!-- Popper JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
     <title>Robin Hẹn hò</title>
     <link rel="stylesheet" href="./css/style.css" />
+    <script  type="text/javascript" src ="./js/config.js" ></script>
+
 </head>
 <body>
     <div class="main">
         <aside class="nav">
             <div class="nav__header">
                 <div class="nav__hearder--profile">
-                    <a href="#">
-                        <img src = "https://scontent.fhph1-3.fna.fbcdn.net/v/t1.6435-1/c1.64.198.199a/p200x200/141433767_1108249559690088_990288042436184426_n.jpg?_nc_cat=107&ccb=1-5&_nc_sid=7206a8&_nc_ohc=5yxEM9Iimv0AX_4k7Ox&_nc_ht=scontent.fhph1-3.fna&oh=00_AT-vqYdzU7_RG4YwBws_REoHUQ_G1kzl29AkfIijrbwnXg&oe=61FCEA38">
-                        <h3>Đông</h3>
-                    </a>
+                    
                 </div>
                 <div class="nav__header--contact"></div>
             </div>
             <div class="nav__qc"></div>
             <div class="nav_content">
-                <div class="nav_content-button">
-                    <button type="button" class="nav-button nav-active" data-value = "ket_noi"><spam>Kết Nối</spam></button>
-                    <button type="button" class="nav-button" data-value = "tin_nhan"><spam>Tin Nhắn</spam></button>
-                </div>
-                <div class="nav__content-main" id = "js_nav_content_main"></div>
             </div>
         </aside>
         <div class="content">
             <div class="content__profile">
                 <div class="menu" id="js_menu_imgs"></div>
                 <div class="content__profile-imgs" id="js_imgs_profile"></div>
+                <div class="content__profile-main" id="js_main_profile"></div>
                 <div class="slide_button">
-                    <i class='bx bx-chevron-left' onclick="plusDivs(-1)"></i>
-                    <i class='bx bx-chevron-right' onclick="plusDivs(1)"></i>
+                    <i class='bx bx-chevron-left' onclick="app.plusDivs(-1)"></i>
+                    <i class='bx bx-chevron-right' onclick="app.plusDivs(1)"></i>
                 </div>
                 <div class="content__tt">
                     <div class="content__tt-i" style = " color: #ffffff ; border: 1px solid #ffffff;"><i class='bx bx-revision' ></i></div>
@@ -44,12 +48,27 @@
                 </div>
             </div>
             <div class="content_hd">
-                <button>Ẩn</button>
-                <i class='bx bx-chevron-left-square'><span>Không</span></i>
-                <i class='bx bx-chevron-right-square'>T<span>hích</span></i>
-                <i class='bx bx-chevron-up-square'><span>Mở Hồ Sơ</span> </i>
-                <i class='bx bx-chevron-down-square'><span>Đóng Hồ Sơ</span> </i>
-                <i class='bx bx-space-bar'><span>Ảnh tiếp theo</span></i>
+                <button onclick="noneitems()">Chú thích</button>
+                <div class="content_hd-item">
+                    <i class='bx bx-space-bar'></i>
+                    <span>Ảnh tiếp theo</span>
+                </div>
+                <div class="content_hd-item">
+                    <i class='bx bx-chevron-left-square'></i>
+                    <span>Không</span>
+                </div>
+                <div class="content_hd-item">
+                    <i class='bx bx-chevron-right-square'></i>
+                    <span>Thích</span>
+                </div>
+                <div class="content_hd-item">
+                    <i class='bx bx-chevron-up-square'> </i>
+                <span>Mở Hồ Sơ</span>
+                </div>
+                <div class="content_hd-item">
+                    <i class='bx bx-chevron-down-square'> </i>
+                    <span>Đóng Hồ Sơ</span>
+                </div>
             </div>
         </div>
     </div>

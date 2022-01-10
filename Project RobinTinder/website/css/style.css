@@ -19,7 +19,7 @@ a{
 }
 .nav{
     position: relative;
-    flex-basis: 30%;
+    width: 300px;
     min-width: 250px;
     height: 100%;
     border-right: .1px solid gray;
@@ -178,6 +178,13 @@ a{
     width: 100%;
     height: 100%;
 }
+.content__profile-imgs h1{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 30;
+    transform: translate(-50%, -50%);
+}
 .slide {
     width: 100%;
     height: 100%;
@@ -258,15 +265,149 @@ a{
 .content__tt .content__tt-i :hover{
     font-size: 2rem;
 }
-.content_hd{
+.content_hd {
     position: absolute;
     bottom: 5px;
-    left: 50%;
-    transform: translate(-50%,0);
     width: 100%;
+    display: flex;
+    justify-content: center;
 }
-.content_hd i {
-    
+.content_hd-item {
+    position: relative;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+    text-transform: uppercase;
+    display: none;
+}
+.content_hd .content_hd-item i {
+    color: rgb(100, 100, 100);
+    padding: 5px;
+    font-size: 1.3rem;
+    text-align: center;
+}
+.content_hd  button {
+    padding: 4px 16px;
+    opacity: .4;
+    font-size: 15px;
+    cursor: pointer;
+    color: #fff;
+    background-color: rgb(46, 46, 46);
+    border-radius: 100px;
+    border: 1px;
+    font-weight: bold;
+}
+.content_hd .content_hd-item span{
+    color: #000;
+    font-size: 15px;
+    font-family: sans-serif,Helvetica,Arial;
+}
+.show{
+    display: flex;
+}
+.content__profile-main{
+    position: absolute;
+    z-index: 16;
+    bottom: 150px;
+    color: white;
+}
+.content__profile-main h1{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 100%;
+    max-width: 80%;
+    margin: 10px;
+    font-size: 1.75rem;
+}
+.content__profile-main h1 span {
+    position: absolute;
+    right: 10px;
+}
+.content__profile-main-hobbys{
+    position: absolute;
+    left: 5px;
+    display: flex;
+    font: 0.75em sans-serif;
+    flex-wrap: wrap;
+}
+.content__profile-main-hobbys div {
+    padding: 4px 13px;
+    background: rgb(27, 27, 27) ;
+    margin: 3px;
+    border-radius: 36px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-width: 80%;
+   
+}
+#form-login , #form-register{
+    opacity: 0;
+    display: block;
+    position: absolute;
+    transition:  .4s ease;
+
+}
+#form-register{
+    left: 100%;
+}
+.login-register h2{
+    text-align: center;
+}
+.form {
+    margin-top: 10px;
+}
+.form input[type="email"], .form input[type="password"],.form input[type="text"] ,.form input[type="number"] ,.form button {
+    width: 80%;
+    margin-left: 10%;
+    margin-bottom: 20px;
+    height: 40px;
+    border-radius: 5px;
+    outline: 0;
+    -moz-outline-style: none;
+}
+.form input[type="email"], .form input[type="password"],.form input[type="text"] ,.form input[type="number"]  {
+  border: 1px solid #bbb;
+  padding: 0 0 0 10px;
+  font-size: 14px;
+  
+}
+.form button {
+    background: #e74c3c;
+    border:none;
+    color: white;
+    font-size: 18px;
+    font-weight: 200;
+    cursor: pointer;
+    transition: box-shadow .4s ease;
+}
+.form button :hover {
+    box-shadow: 1px 1px 5px #555;  
+}
+.form button :active {
+    box-shadow: 1px 1px 7px #222;  
+}
+.form .form_login-button {
+    text-align: center;
+    font-size: 10px;
+    color: #3498db;
+    cursor: pointer;
+}  
+.form p{
+    padding-bottom: 10px;
+}
+.form_register-interest{
+    display: flex;
+    margin-left: 10%;
+    flex-wrap: wrap;
+    width: 80%;
+    max-width: 80%;
+    justify-content: space-between;
+}
+.form_register-interest > div {
+    padding: 5px;
 }
 @media screen and (max-width: 760px) {
     .nav{
