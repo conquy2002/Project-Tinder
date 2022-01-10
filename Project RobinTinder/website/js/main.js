@@ -29,98 +29,8 @@ var ket_noi = [
         name: "Nguyên Phấn Đông"
     }
 ]
-var tin_nhan = [
-    {
-        id: 1,
-        name: "Đinh Thị Ngọc Anh",
-        img: "https://scontent.fhph1-3.fna.fbcdn.net/v/t1.6435-1/c1.64.198.199a/p200x200/141433767_1108249559690088_990288042436184426_n.jpg?_nc_cat=107&ccb=1-5&_nc_sid=7206a8&_nc_ohc=5yxEM9Iimv0AX_4k7Ox&_nc_ht=scontent.fhph1-3.fna&oh=00_AT-vqYdzU7_RG4YwBws_REoHUQ_G1kzl29AkfIijrbwnXg&oe=61FCEA38",
-        body: "akelflwsefvkfsfgwefkledrgleirgnlrient5bvligẻtgertghrthbtyhtyhnytjtyjkt6j6tmwlkc",
-        you: true,
-    },{
-        id: 1,
-        img: "https://scontent.fhph1-3.fna.fbcdn.net/v/t1.6435-1/c1.64.198.199a/p200x200/141433767_1108249559690088_990288042436184426_n.jpg?_nc_cat=107&ccb=1-5&_nc_sid=7206a8&_nc_ohc=5yxEM9Iimv0AX_4k7Ox&_nc_ht=scontent.fhph1-3.fna&oh=00_AT-vqYdzU7_RG4YwBws_REoHUQ_G1kzl29AkfIijrbwnXg&oe=61FCEA38",
-        name: "Đinh Thị Ngọc Anh",
-        body: "akelflwsefvkfmwlkc",
-        you: true,
-    },{
-        id: 1,
-        img: "https://scontent.fhph1-3.fna.fbcdn.net/v/t1.6435-1/c1.64.198.199a/p200x200/141433767_1108249559690088_990288042436184426_n.jpg?_nc_cat=107&ccb=1-5&_nc_sid=7206a8&_nc_ohc=5yxEM9Iimv0AX_4k7Ox&_nc_ht=scontent.fhph1-3.fna&oh=00_AT-vqYdzU7_RG4YwBws_REoHUQ_G1kzl29AkfIijrbwnXg&oe=61FCEA38",
-        name: "Đinh Thị Ngọc Anh",
-        body: "akelflwsefvkfmwlkc",
-        you: true,
-    },{
-        id: 1,
-        img: "https://scontent.fhph1-3.fna.fbcdn.net/v/t1.6435-1/c1.64.198.199a/p200x200/141433767_1108249559690088_990288042436184426_n.jpg?_nc_cat=107&ccb=1-5&_nc_sid=7206a8&_nc_ohc=5yxEM9Iimv0AX_4k7Ox&_nc_ht=scontent.fhph1-3.fna&oh=00_AT-vqYdzU7_RG4YwBws_REoHUQ_G1kzl29AkfIijrbwnXg&oe=61FCEA38",
-        name: "Đinh Thị Ngọc Anh",
-        body: "akelflwsefvkfmwlkc",
-        you: true,
-    },{
-        id: 1,
-        img: "https://scontent.fhph1-3.fna.fbcdn.net/v/t1.6435-1/c1.64.198.199a/p200x200/141433767_1108249559690088_990288042436184426_n.jpg?_nc_cat=107&ccb=1-5&_nc_sid=7206a8&_nc_ohc=5yxEM9Iimv0AX_4k7Ox&_nc_ht=scontent.fhph1-3.fna&oh=00_AT-vqYdzU7_RG4YwBws_REoHUQ_G1kzl29AkfIijrbwnXg&oe=61FCEA38",
-        name: "Đinh Thị Ngọc Anh",
-        body: "akelflwsefvkfmwlkc",
-        you: true,
-    },{
-        id: 1,
-        img: "https://scontent.fhph1-3.fna.fbcdn.net/v/t1.6435-1/c1.64.198.199a/p200x200/141433767_1108249559690088_990288042436184426_n.jpg?_nc_cat=107&ccb=1-5&_nc_sid=7206a8&_nc_ohc=5yxEM9Iimv0AX_4k7Ox&_nc_ht=scontent.fhph1-3.fna&oh=00_AT-vqYdzU7_RG4YwBws_REoHUQ_G1kzl29AkfIijrbwnXg&oe=61FCEA38",
-        name: "Đinh Thị Ngọc Anh",
-        body: "akelflwsefvkfmwlkc",
-        you: true,
-    },{
-        id: 1,
-        img: "https://scontent.fhph1-3.fna.fbcdn.net/v/t1.6435-1/c1.64.198.199a/p200x200/141433767_1108249559690088_990288042436184426_n.jpg?_nc_cat=107&ccb=1-5&_nc_sid=7206a8&_nc_ohc=5yxEM9Iimv0AX_4k7Ox&_nc_ht=scontent.fhph1-3.fna&oh=00_AT-vqYdzU7_RG4YwBws_REoHUQ_G1kzl29AkfIijrbwnXg&oe=61FCEA38",
-        name: "Đinh Thị Ngọc Anh",
-        body: "akelflwsefvkfmwlkc",
-        you: true,
-    },{
-        id: 1,
-        img: "https://scontent.fhph1-3.fna.fbcdn.net/v/t1.6435-1/c1.64.198.199a/p200x200/141433767_1108249559690088_990288042436184426_n.jpg?_nc_cat=107&ccb=1-5&_nc_sid=7206a8&_nc_ohc=5yxEM9Iimv0AX_4k7Ox&_nc_ht=scontent.fhph1-3.fna&oh=00_AT-vqYdzU7_RG4YwBws_REoHUQ_G1kzl29AkfIijrbwnXg&oe=61FCEA38",
-        name: "Đinh Thị Ngọc Anh",
-        body: "akelflwsefvkfmwlkc",
-        you: true,
-    },{
-        id: 1,
-        img: "https://scontent.fhph1-3.fna.fbcdn.net/v/t1.6435-1/c1.64.198.199a/p200x200/141433767_1108249559690088_990288042436184426_n.jpg?_nc_cat=107&ccb=1-5&_nc_sid=7206a8&_nc_ohc=5yxEM9Iimv0AX_4k7Ox&_nc_ht=scontent.fhph1-3.fna&oh=00_AT-vqYdzU7_RG4YwBws_REoHUQ_G1kzl29AkfIijrbwnXg&oe=61FCEA38",
-        name: "Đinh Thị Ngọc Anh",
-        body: "akelflwsefvkfmwlkc",
-        you: true,
-    },{
-        id: 1,
-        img: "https://scontent.fhph1-3.fna.fbcdn.net/v/t1.6435-1/c1.64.198.199a/p200x200/141433767_1108249559690088_990288042436184426_n.jpg?_nc_cat=107&ccb=1-5&_nc_sid=7206a8&_nc_ohc=5yxEM9Iimv0AX_4k7Ox&_nc_ht=scontent.fhph1-3.fna&oh=00_AT-vqYdzU7_RG4YwBws_REoHUQ_G1kzl29AkfIijrbwnXg&oe=61FCEA38",
-        name: "Đinh Thị Ngọc Anh",
-        body: "akelflwsefvkfmwlkc",
-        you: true,
-    }
-]
-var nav_clicks_data = {
-    "ket_noi" : (()=>{
-        var body = "";
-        ket_noi.forEach( a => {
-            body += `
-            <div class = "connection">
-                <img src ="${a.img}"/>
-                <span class = "connection_span"><h3>${a.name}</h3></span>
-            </div>
-            `
-        })
-        return body;
-    })(),
-    "tin_nhan": (()=>{
-        var bodymess = "";
-        tin_nhan.forEach( a => {
-            bodymess += `
-            <div class = "messger active-message">
-                <img src ="${a.img}"/>
-                <div class = "messger-content">
-                    <span class = "connection_span"><h3>${a.name}</h3></span>
-                    <p>${a.you ? "<i class='bx bx-arrow-back'></i>" : ""}${a.body}</p>
-                </div>
-            </div>
-            `
-        })
-        return bodymess;
-    })()
-};
+
+
 var profile = [
     {
         id: 1,
@@ -319,6 +229,21 @@ var profile = [
         ]
     }
 ]
+var nav_clicks_data = {
+    "ket_noi" : (()=>{
+        var body = "";
+        ket_noi.forEach( a => {
+            body += `
+            <div class = "connection">
+                <img src ="${a.img}"/>
+                <span class = "connection_span"><h3>${a.name}</h3></span>
+            </div>
+            `
+        })
+        return body;
+    })()
+
+};
 const qS = document.querySelector.bind(document);
 const qSA = document.querySelectorAll.bind(document);
 
@@ -357,22 +282,25 @@ var app = {
                         <form class="form" id = "login">
                             <input type="email" placeholder="Email"  />
                             <input type="password" placeholder="Mật khẩu"  />
-                            <button> Đăng nhập </button>
+                            <div class = "button"> Đăng nhập </div>
                             <div class = "form_login-button" id = "covent_dk"> <p> Đăng ký </p></div>
                         </form>
                     </div>
-                    <div id = "form-register">
+                    <div id = "form-register" >
                         <h2>Đăng Ký</h2>
-                        <form class="form" id = "register">
-                            <input type="email" placeholder="Email" />
-                            <input type="password" placeholder="Mật khẩu" />
-                            <input type="password" placeholder="Nhập lại mật khẩu"  />
-                            <input type="text" placeholder="Địa Chỉ"  />
+                        <form class="form"   >
+                            <input type="text" placeholder="Tên đăng nhập" id = "email"/>
+                            <input type="password" placeholder="Mật khẩu" id = "pwd"/>
+                            <input type="password" placeholder="Nhập lại mật khẩu" id = "confirmation_pwd" />
+                            <input type="text" placeholder="Họ"  id = "ho"/>
+                            <input type="text" placeholder="Tên"  id = "ten"/>
+                            <input type="text" placeholder="Địa Chỉ"  id= "city"/>      
                             <input type="number" placeholder="Tuổi" onkeypress="return isNumberKey(event)" 
-                            maxlength="5" />
+                            maxlength="5" id = "age" />
                             <h5 style = "margin-left: 10%; ">Sở thích</h5>
+                            <input type="text" placeholder="Tự thêm sở thích"  id= "hobby"/>      
                             <div id = "js_interest" class = "form_register-interest"></div>
-                            <button> Đăng ký </button>
+                            <div class = "button" id = "register"> Đăng ký </div>
                             <div class = "form_login-button" id = "covent_dn"> <p> Đăng nhập </p></div>
                         </form>
                     </div>
@@ -435,7 +363,27 @@ var app = {
             item.onclick = (e) => {
                 nav_clicks.forEach(a => a.classList.remove("nav-active"))
                 item.classList.add("nav-active");
-                qS("#js_nav_content_main").innerHTML = nav_clicks_data[item.dataset.value]; 
+                switch (item.dataset.value) {
+                    case "tin_nhan": {
+                        app.get(basic_url + message,(err,data) => {
+                            if(err) return console.log(err)
+                            var bodymess = " ";
+                            data.forEach( a => {
+                                bodymess += `
+                                <div class = "messger active-message" onclick = "MessgerId(${a.id})">
+                                    <img src ="${a.imager}"/>
+                                    <div class = "messger-content">
+                                        <span class = "connection_span"><h3>${a.senderName}</h3></span>
+                                        <p>${a.you ? "<i class='bx bx-arrow-back'></i>" : ""}${a.content}</p>
+                                    </div>
+                                </div>
+                                `
+                            })
+                            return qS("#js_nav_content_main").innerHTML =bodymess;
+                        })
+                        break;
+                    }
+                }
             }
         }
         //đăng ký đăng nhập
@@ -451,6 +399,60 @@ var app = {
                 qS("#form-login").style.left = "0";
                 qS("#form-register").style.opacity = "0";
                 qS("#form-register").style.left = "100%";
+            }
+            qS('#register').onclick = ()=>{
+                var pwd = qS('#pwd').value
+                var confirmPwd = qS('#confirmation_pwd').value
+                if(pwd != confirmPwd) {
+                    alert('Mat khau khong khop, vui long kiem tra lai!!!')
+                    return false;
+                }
+                return app.post(basic_url + registerurl, {
+                    "firstName": qS("#ho").value,
+                    "lastName": qS("#ten").value,
+                    "email": qS("#email").value,
+                    "password": pwd,
+                    "confirmPassword": confirmPwd,
+                    "loginViewModels": [
+                        {
+                        "email": qS("#email").value,
+                        "password": pwd,
+                        "rememberMe": false
+                        }
+                    ]
+                }, (err,data) => {
+                    if(err) return alert("Lỗi Api");
+                    if(data.status = "error") return alert(data.message)
+                    return app.post(basic_url + registerurl, {
+                        "id": data.message,
+                        "name": qS("#ho").value + qS("#ten").value ,
+                        "userAvatarBase64String": "https://scr.vn/wp-content/uploads/2020/07/Avatar-Facebook-tr%E1%BA%AFng.jpg",
+                        "age": qS("#age").value,
+                        "city": qS("#city").value,
+                        "note": "note",
+                        "isAdmin": false,
+                        "numberHobby": 0,
+                        "userHobbies": [
+                            {
+                            "hobby": qS("#hobby").value ? hobby = qS("#hobby").value : " "
+                            }
+                        ],
+                        "imagerOfUsers": [
+                            ""
+                        ],
+                        "notiUsers": [
+                            ""
+                        ],
+                        "userConnect": [
+                           ""
+                        ]
+                    },(err,value)=>{
+                        if(err) return alert("Lỗi Api");
+                        if(data.status = "error") return alert(data.message);
+                        app.login = true;
+                        return app.start();
+                    })
+                })
             }
         }
         //Khi nhấn keybroad
@@ -476,13 +478,28 @@ var app = {
     get: function (url, callback) {
         return fetch(url,{
             method : "GET",
-            mode: 'cors'
         })
         .then(response => response.json())
-            .then(data => callback(null,data))
-            .catch(function(error) {
-                callback(error)
-            });
+        .then(data => callback(null,data))
+        .catch(function(error) {
+            callback(error)
+        });
+    },
+    post: function(url, data = {},callback) {
+        return fetch(url, {
+            method: 'POST', 
+            mode: 'cors',
+            cache: 'no-cache',
+            credentials: 'same-origin', 
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+          }).then(response => response.json())
+          .then(data => callback(null,data))
+          .catch(function(error) {
+              callback(error)
+          });
     },
     api: function () {
         this.get(basic_url + Interests,(err,data) => {
@@ -509,4 +526,7 @@ function noneitems(){
 }
 
 
+function MessgerId(id){
+    console.log(id)
+}
 

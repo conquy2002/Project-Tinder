@@ -1,0 +1,30 @@
+{
+    "sourceFile": "js/config.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1641805625077,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1641805646143,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,4 @@\n var basic_url = 'https://localhost:7005'\r\n \r\n-var Interests = \"/api/Interests\"\n\\ No newline at end of file\n+var Interests = \"/api/Interests\";\r\n+var registeruel = '/Api/Login/Createcontact';\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1641805674029,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,4 @@\n var basic_url = 'https://localhost:7005'\r\n \r\n var Interests = \"/api/Interests\";\r\n-var registeruel = '/Api/Login/Createcontact';\n\\ No newline at end of file\n+var registerurl = '/Api/Login/Createcontact';\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1641808000779,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,5 @@\n var basic_url = 'https://localhost:7005'\r\n \r\n var Interests = \"/api/Interests\";\r\n-var registerurl = '/Api/Login/Createcontact';\n\\ No newline at end of file\n+var registerurl = '/Api/Login/Createcontact';\r\n+var message = \"/api/MessgerUsers\";\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1641805625077,
+            "name": "Commit-0",
+            "content": "var basic_url = 'https://localhost:7005'\r\n\r\nvar Interests = \"/api/Interests\""
+        }
+    ]
+}

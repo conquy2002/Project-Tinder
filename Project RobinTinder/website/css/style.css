@@ -80,7 +80,7 @@ a{
     height: calc(100% - 90px);
     width: 100%;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
 }
 .nav__content-main  .connection{
     position: relative;
@@ -359,6 +359,7 @@ a{
 .form {
     margin-top: 10px;
 }
+
 .form input[type="email"], .form input[type="password"],.form input[type="text"] ,.form input[type="number"] ,.form button {
     width: 80%;
     margin-left: 10%;
@@ -367,6 +368,7 @@ a{
     border-radius: 5px;
     outline: 0;
     -moz-outline-style: none;
+    
 }
 .form input[type="email"], .form input[type="password"],.form input[type="text"] ,.form input[type="number"]  {
   border: 1px solid #bbb;
@@ -374,19 +376,27 @@ a{
   font-size: 14px;
   
 }
-.form button {
+.form .button {
     background: #e74c3c;
     border:none;
     color: white;
     font-size: 18px;
     font-weight: 200;
+    width: 50%;
+    border-radius: 36px;
     cursor: pointer;
-    transition: box-shadow .4s ease;
+    padding: 10px;
+    text-align: center;
+    margin-left: 50%;
+    transform: translate(-50%, 0);
+    margin-bottom: 10px;
+    margin-bottom: 10px;
+
 }
-.form button :hover {
+.form .button :hover {
     box-shadow: 1px 1px 5px #555;  
 }
-.form button :active {
+.form .button :active {
     box-shadow: 1px 1px 7px #222;  
 }
 .form .form_login-button {

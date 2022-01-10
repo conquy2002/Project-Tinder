@@ -1,3 +1,5 @@
-var basic_url = 'https://localhost:7005/api'
+var basic_url = 'https://localhost:7005'
 
-var Interests = "/Interests"
+var Interests = "/api/Interests";
+var registerurl = '/Api/Login/Createcontact';
+var message = "/api/MessgerUsers";

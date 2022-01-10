@@ -1,0 +1,122 @@
+{
+    "sourceFile": "css/style.css",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 26,
+            "patches": [
+                {
+                    "date": 1641804653643,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1641804691271,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -380,8 +380,9 @@\n     color: white;\r\n     font-size: 18px;\r\n     font-weight: 200;\r\n     cursor: pointer;\r\n+    padding: 15px;\r\n     transition: box-shadow .4s ease;\r\n }\r\n .form .button :hover {\r\n     box-shadow: 1px 1px 5px #555;  \r\n"
+                },
+                {
+                    "date": 1641804723537,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -379,10 +379,11 @@\n     border:none;\r\n     color: white;\r\n     font-size: 18px;\r\n     font-weight: 200;\r\n+    width: 50%;\r\n     cursor: pointer;\r\n-    padding: 15px;\r\n+    padding: 10px;\r\n     transition: box-shadow .4s ease;\r\n }\r\n .form .button :hover {\r\n     box-shadow: 1px 1px 5px #555;  \r\n"
+                },
+                {
+                    "date": 1641804729774,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -380,8 +380,9 @@\n     color: white;\r\n     font-size: 18px;\r\n     font-weight: 200;\r\n     width: 50%;\r\n+    border-radius:36\r\n     cursor: pointer;\r\n     padding: 10px;\r\n     transition: box-shadow .4s ease;\r\n }\r\n"
+                },
+                {
+                    "date": 1641804741513,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -380,12 +380,11 @@\n     color: white;\r\n     font-size: 18px;\r\n     font-weight: 200;\r\n     width: 50%;\r\n-    border-radius:36\r\n+    border-radius: 36px;\r\n     cursor: pointer;\r\n     padding: 10px;\r\n-    transition: box-shadow .4s ease;\r\n }\r\n .form .button :hover {\r\n     box-shadow: 1px 1px 5px #555;  \r\n }\r\n"
+                },
+                {
+                    "date": 1641804754978,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -383,8 +383,9 @@\n     width: 50%;\r\n     border-radius: 36px;\r\n     cursor: pointer;\r\n     padding: 10px;\r\n+    text-align: center;\r\n }\r\n .form .button :hover {\r\n     box-shadow: 1px 1px 5px #555;  \r\n }\r\n"
+                },
+                {
+                    "date": 1641804879407,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -357,8 +357,9 @@\n     text-align: center;\r\n }\r\n .form {\r\n     margin-top: 10px;\r\n+    display: flex\r\n }\r\n .form input[type=\"email\"], .form input[type=\"password\"],.form input[type=\"text\"] ,.form input[type=\"number\"] ,.form button {\r\n     width: 80%;\r\n     margin-left: 10%;\r\n@@ -366,8 +367,9 @@\n     height: 40px;\r\n     border-radius: 5px;\r\n     outline: 0;\r\n     -moz-outline-style: none;\r\n+    \r\n }\r\n .form input[type=\"email\"], .form input[type=\"password\"],.form input[type=\"text\"] ,.form input[type=\"number\"]  {\r\n   border: 1px solid #bbb;\r\n   padding: 0 0 0 10px;\r\n"
+                },
+                {
+                    "date": 1641804892317,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -357,9 +357,10 @@\n     text-align: center;\r\n }\r\n .form {\r\n     margin-top: 10px;\r\n-    display: flex\r\n+    display: flex;\r\n+    flex-direction: column;\r\n }\r\n .form input[type=\"email\"], .form input[type=\"password\"],.form input[type=\"text\"] ,.form input[type=\"number\"] ,.form button {\r\n     width: 80%;\r\n     margin-left: 10%;\r\n"
+                },
+                {
+                    "date": 1641804901159,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -359,8 +359,9 @@\n .form {\r\n     margin-top: 10px;\r\n     display: flex;\r\n     flex-direction: column;\r\n+    width: 100%;\r\n }\r\n .form input[type=\"email\"], .form input[type=\"password\"],.form input[type=\"text\"] ,.form input[type=\"number\"] ,.form button {\r\n     width: 80%;\r\n     margin-left: 10%;\r\n"
+                },
+                {
+                    "date": 1641804934805,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -347,9 +347,9 @@\n     opacity: 0;\r\n     display: block;\r\n     position: absolute;\r\n     transition:  .4s ease;\r\n-\r\n+    width: 100%;\r\n }\r\n #form-register{\r\n     left: 100%;\r\n }\r\n@@ -359,9 +359,8 @@\n .form {\r\n     margin-top: 10px;\r\n     display: flex;\r\n     flex-direction: column;\r\n-    width: 100%;\r\n }\r\n .form input[type=\"email\"], .form input[type=\"password\"],.form input[type=\"text\"] ,.form input[type=\"number\"] ,.form button {\r\n     width: 80%;\r\n     margin-left: 10%;\r\n"
+                },
+                {
+                    "date": 1641804956126,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -347,9 +347,9 @@\n     opacity: 0;\r\n     display: block;\r\n     position: absolute;\r\n     transition:  .4s ease;\r\n-    width: 100%;\r\n+    width: auto;\r\n }\r\n #form-register{\r\n     left: 100%;\r\n }\r\n"
+                },
+                {
+                    "date": 1641804986478,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -347,9 +347,10 @@\n     opacity: 0;\r\n     display: block;\r\n     position: absolute;\r\n     transition:  .4s ease;\r\n-    width: auto;\r\n+    width: 300px;\r\n+    min-width: 250px;\r\n }\r\n #form-register{\r\n     left: 100%;\r\n }\r\n"
+                },
+                {
+                    "date": 1641805004884,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -360,8 +360,9 @@\n .form {\r\n     margin-top: 10px;\r\n     display: flex;\r\n     flex-direction: column;\r\n+    align-items: center;\r\n }\r\n .form input[type=\"email\"], .form input[type=\"password\"],.form input[type=\"text\"] ,.form input[type=\"number\"] ,.form button {\r\n     width: 80%;\r\n     margin-left: 10%;\r\n"
+                },
+                {
+                    "date": 1641805085059,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -347,10 +347,9 @@\n     opacity: 0;\r\n     display: block;\r\n     position: absolute;\r\n     transition:  .4s ease;\r\n-    width: 300px;\r\n-    min-width: 250px;\r\n+\r\n }\r\n #form-register{\r\n     left: 100%;\r\n }\r\n@@ -358,11 +357,8 @@\n     text-align: center;\r\n }\r\n .form {\r\n     margin-top: 10px;\r\n-    display: flex;\r\n-    flex-direction: column;\r\n-    align-items: center;\r\n }\r\n .form input[type=\"email\"], .form input[type=\"password\"],.form input[type=\"text\"] ,.form input[type=\"number\"] ,.form button {\r\n     width: 80%;\r\n     margin-left: 10%;\r\n"
+                },
+                {
+                    "date": 1641805102020,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -385,8 +385,9 @@\n     border-radius: 36px;\r\n     cursor: pointer;\r\n     padding: 10px;\r\n     text-align: center;\r\n+    margin-left: 10%;\r\n }\r\n .form .button :hover {\r\n     box-shadow: 1px 1px 5px #555;  \r\n }\r\n"
+                },
+                {
+                    "date": 1641805113798,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -386,8 +386,9 @@\n     cursor: pointer;\r\n     padding: 10px;\r\n     text-align: center;\r\n     margin-left: 10%;\r\n+    margin-bottom: 5px;\r\n }\r\n .form .button :hover {\r\n     box-shadow: 1px 1px 5px #555;  \r\n }\r\n"
+                },
+                {
+                    "date": 1641805138972,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -386,9 +386,10 @@\n     cursor: pointer;\r\n     padding: 10px;\r\n     text-align: center;\r\n     margin-left: 10%;\r\n-    margin-bottom: 5px;\r\n+    margin-bottom: 6px;\r\n+    align-items: center;\r\n }\r\n .form .button :hover {\r\n     box-shadow: 1px 1px 5px #555;  \r\n }\r\n"
+                },
+                {
+                    "date": 1641805147593,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -387,9 +387,8 @@\n     padding: 10px;\r\n     text-align: center;\r\n     margin-left: 10%;\r\n     margin-bottom: 6px;\r\n-    align-items: center;\r\n }\r\n .form .button :hover {\r\n     box-shadow: 1px 1px 5px #555;  \r\n }\r\n"
+                },
+                {
+                    "date": 1641805185115,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -358,8 +358,9 @@\n }\r\n .form {\r\n     margin-top: 10px;\r\n }\r\n+\r\n .form input[type=\"email\"], .form input[type=\"password\"],.form input[type=\"text\"] ,.form input[type=\"number\"] ,.form button {\r\n     width: 80%;\r\n     margin-left: 10%;\r\n     margin-bottom: 20px;\r\n"
+                },
+                {
+                    "date": 1641805190846,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -406,9 +406,9 @@\n     padding-bottom: 10px;\r\n }\r\n .form_register-interest{\r\n     display: flex;\r\n-    margin-left: 10%;\r\n+    margin-left: 15%;\r\n     flex-wrap: wrap;\r\n     width: 80%;\r\n     max-width: 80%;\r\n     justify-content: space-between;\r\n"
+                },
+                {
+                    "date": 1641805198079,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -406,9 +406,9 @@\n     padding-bottom: 10px;\r\n }\r\n .form_register-interest{\r\n     display: flex;\r\n-    margin-left: 15%;\r\n+    margin-left: 10%;\r\n     flex-wrap: wrap;\r\n     width: 80%;\r\n     max-width: 80%;\r\n     justify-content: space-between;\r\n"
+                },
+                {
+                    "date": 1641805204506,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -386,9 +386,9 @@\n     border-radius: 36px;\r\n     cursor: pointer;\r\n     padding: 10px;\r\n     text-align: center;\r\n-    margin-left: 10%;\r\n+    margin-left: 15%;\r\n     margin-bottom: 6px;\r\n }\r\n .form .button :hover {\r\n     box-shadow: 1px 1px 5px #555;  \r\n"
+                },
+                {
+                    "date": 1641805213000,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -386,9 +386,9 @@\n     border-radius: 36px;\r\n     cursor: pointer;\r\n     padding: 10px;\r\n     text-align: center;\r\n-    margin-left: 15%;\r\n+    margin-left: 20%;\r\n     margin-bottom: 6px;\r\n }\r\n .form .button :hover {\r\n     box-shadow: 1px 1px 5px #555;  \r\n"
+                },
+                {
+                    "date": 1641805221689,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -386,9 +386,9 @@\n     border-radius: 36px;\r\n     cursor: pointer;\r\n     padding: 10px;\r\n     text-align: center;\r\n-    margin-left: 20%;\r\n+    margin-left: 50%;\r\n     margin-bottom: 6px;\r\n }\r\n .form .button :hover {\r\n     box-shadow: 1px 1px 5px #555;  \r\n"
+                },
+                {
+                    "date": 1641805228067,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -387,8 +387,9 @@\n     cursor: pointer;\r\n     padding: 10px;\r\n     text-align: center;\r\n     margin-left: 50%;\r\n+    transform: translate(-50%, -50%);\r\n     margin-bottom: 6px;\r\n }\r\n .form .button :hover {\r\n     box-shadow: 1px 1px 5px #555;  \r\n"
+                },
+                {
+                    "date": 1641805245220,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -387,10 +387,12 @@\n     cursor: pointer;\r\n     padding: 10px;\r\n     text-align: center;\r\n     margin-left: 50%;\r\n-    transform: translate(-50%, -50%);\r\n-    margin-bottom: 6px;\r\n+    transform: translate(-50%, 0);\r\n+    margin-bottom: 10px;\r\n+    margin-bottom: 10px;\r\n+\r\n }\r\n .form .button :hover {\r\n     box-shadow: 1px 1px 5px #555;  \r\n }\r\n"
+                },
+                {
+                    "date": 1641810383588,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -79,9 +79,9 @@\n     overflow: scroll;\r\n     height: calc(100% - 90px);\r\n     width: 100%;\r\n     display: flex;\r\n-    flex-wrap: wrap;\r\n+    flex-direction: column;\r\n }\r\n .nav__content-main  .connection{\r\n     position: relative;\r\n     cursor: pointer;\r\n"
+                }
+            ],
+            "date": 1641804653643,
+            "name": "Commit-0",
+            "content": "*{\r\n    margin: 0;\r\n    padding: 0;\r\n    box-sizing: border-box;\r\n}\r\nbody{\r\n    font-family: sans-serif,Helvetica,Arial;\r\n    overflow: hidden;\r\n\r\n}\r\na{\r\n    text-decoration: none;\r\n}\r\n.main{\r\n    background-color: #f0f2f4;\r\n    height: 100vh;\r\n    width: 100%;\r\n    display: flex;\r\n}\r\n.nav{\r\n    position: relative;\r\n    width: 300px;\r\n    min-width: 250px;\r\n    height: 100%;\r\n    border-right: .1px solid gray;\r\n}\r\n.nav__header{\r\n    background: linear-gradient(\r\n45deg,#fd267a,#ff6036);\r\n    background-image: linear-gradient(\r\n45deg, rgb(253, 38, 122), rgb(255, 96, 54));\r\n    width: 100%;\r\n    display: flex;\r\n    overflow: hidden;\r\n}\r\n.nav__hearder--profile{\r\n    padding: 15px 10px;\r\n}\r\n.nav__hearder--profile a{\r\n    display: flex;\r\n    padding: 5px;\r\n    align-items: center;\r\n    color: #fff;\r\n    font-size: 12px;\r\n    flex-basis: 25%;\r\n    cursor: pointer;\r\n}\r\n.nav__hearder--profile img{\r\n    height: 1.5rem;\r\n    width: 1.5rem;\r\n    border-radius: 50%;\r\n    margin-right: 5px;\r\n}\r\n.nav__hearder--profile a:hover{\r\n    background-color: rgba(0,0,0,.32)!important;\r\n    border-radius: 36px;\r\n}\r\n.nav_content{\r\n    background-color: #fff;\r\n    padding: 10px;\r\n    height: 100%;\r\n    overflow: hidden;\r\n}\r\n.nav_content-button{\r\n    padding: 10px;\r\n}\r\n.nav-button{\r\n    border: none;\r\n    background-color: #fff;\r\n    font-weight: bold;\r\n    cursor: pointer;\r\n    margin-right: 10px;\r\n    margin-left: 5px;\r\n}\r\n.nav-active{\r\n    border-bottom: 3px solid #fd267a;\r\n}\r\n.nav__content-main{\r\n    overflow: scroll;\r\n    height: calc(100% - 90px);\r\n    width: 100%;\r\n    display: flex;\r\n    flex-wrap: wrap;\r\n}\r\n.nav__content-main  .connection{\r\n    position: relative;\r\n    cursor: pointer;\r\n}\r\n.nav__content-main  .connection img{\r\n    width: 100px;\r\n    height: 130px;\r\n    object-fit: cover;\r\n    margin: 10px;\r\n}\r\n.nav__content-main .connection .connection_span{\r\n    width: 90%;\r\n    white-space: pre-wrap;\r\n    position: absolute;\r\n    left: 15px;\r\n    bottom: 40px;\r\n    color: #fff;\r\n}\r\n.nav__content-main .connection .connection_span h3{\r\n    position: absolute;\r\n    font-size: 12px;\r\n    hyphens: none;\r\n    white-space: nowrap;\r\n    text-overflow: ellipsis;\r\n    overflow: hidden;\r\n    max-width: 80%;\r\n}\r\n\r\n\r\n.nav__content-main .messger{\r\n    height: 80px;\r\n    width: 100%;\r\n    display: flex;\r\n    cursor: pointer;\r\n}\r\n\r\n.nav__content-main .messger img{\r\n    width: 50px;\r\n    height: 50px;\r\n    object-fit: cover;\r\n    margin: 10px;\r\n    border-radius: 50%;\r\n}\r\n.nav__content-main .messger .connection_span{\r\n    font-size: 12px;\r\n    hyphens: none;\r\n   \r\n    white-space: nowrap;\r\n    text-overflow: ellipsis;\r\n    overflow: hidden;\r\n    max-width: 80%;\r\n}\r\n.nav__content-main .messger .messger-content {\r\n    margin: 10px;\r\n    padding: 5px;\r\n}\r\n.nav__content-main .messger .messger-content p {\r\n    color: grey;\r\n    font-size: 13px;\r\n    text-align: center;\r\n    padding: 5px;\r\n    hyphens: none;\r\n    white-space: nowrap;\r\n    text-overflow: ellipsis;\r\n    overflow: hidden;\r\n    width: 100%;\r\n    max-width: 80%;\r\n}\r\n::-webkit-scrollbar {\r\n    display: none;\r\n}\r\n.content{\r\n    height: 100%;\r\n    position: relative;\r\n    overflow: hidden; \r\n    text-align: center;\r\n    flex-basis: 70%;\r\n}\r\n.content__profile{\r\n    position: absolute;\r\n    width: 300px;\r\n    background-color: #fff;\r\n    height: calc(100vh - 100px);\r\n    top: 50%;\r\n    left: 50%;\r\n    transform: translate(-50%, -50%);\r\n    overflow: hidden;\r\n}\r\n.content__profile-imgs{\r\n    position: absolute;\r\n    left: 0;\r\n    top: 0;\r\n    z-index: 15;\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n.content__profile-imgs h1{\r\n    position: absolute;\r\n    left: 50%;\r\n    top: 50%;\r\n    z-index: 30;\r\n    transform: translate(-50%, -50%);\r\n}\r\n.slide {\r\n    width: 100%;\r\n    height: 100%;\r\n    background-size: cover;\r\n    background-position: 50% 50%;\r\n    transition: left 0s .75s;\r\n    object-fit: cover;\r\n}\r\n.slide_button{\r\n    position: absolute;\r\n    left: 0;\r\n    top: 0;\r\n    width: 100%;\r\n    height: 100%;\r\n    z-index: 125;\r\n    display: flex;\r\n}\r\n.slide_button i {\r\n    font-size: 50px;\r\n    color: #fff;\r\n    width: 50%;\r\n    height: 100%;\r\n    display: flex;\r\n    align-items: center;\r\n    cursor: pointer;\r\n}\r\n.slide_button i:nth-child(1){\r\n    justify-content: flex-start;\r\n}\r\n.slide_button i:nth-child(2){\r\n    justify-content: flex-end;\r\n}\r\n.slide_button i :hover{\r\n    background: rgba(255,255,255,0.15);\r\n}\r\n.menu{\r\n    position: absolute;\r\n    left: 0;\r\n    z-index: 120;\r\n    width: 100%;\r\n    top: 5px;\r\n}\r\n.menu label {\r\n    cursor: pointer;\r\n    display: inline-block;\r\n    width: 15px;\r\n    height: 9px;\r\n    background: rgb(112 112 112);\r\n    border-radius: 50px;\r\n    margin: 0 .2em 1em;\r\n    transition: all .3s ease;\r\n}\r\n.content__tt{\r\n    position: absolute;\r\n    display: flex;\r\n    justify-content: space-evenly;\r\n    align-items: center;\r\n    left: 0;\r\n    z-index: 130;\r\n    width: 100%;\r\n    bottom: 0;\r\n    height: 50px;\r\n    background-image: linear-gradient( \r\n        0deg, rgb(124 124 124), rgb(255, 96, 54,0))\r\n}\r\n.content__tt .content__tt-i{\r\n    width: 50px;\r\n    height: 50px;\r\n    /* padding: 10px; */\r\n    border-radius: 50%;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    font-size: 1.75rem;\r\n    cursor: pointer;\r\n    margin-bottom: 5px;\r\n}\r\n.content__tt .content__tt-i :hover{\r\n    font-size: 2rem;\r\n}\r\n.content_hd {\r\n    position: absolute;\r\n    bottom: 5px;\r\n    width: 100%;\r\n    display: flex;\r\n    justify-content: center;\r\n}\r\n.content_hd-item {\r\n    position: relative;\r\n    text-align: center;\r\n    display: flex;\r\n    align-items: center;\r\n    margin-right: 10px;\r\n    text-transform: uppercase;\r\n    display: none;\r\n}\r\n.content_hd .content_hd-item i {\r\n    color: rgb(100, 100, 100);\r\n    padding: 5px;\r\n    font-size: 1.3rem;\r\n    text-align: center;\r\n}\r\n.content_hd  button {\r\n    padding: 4px 16px;\r\n    opacity: .4;\r\n    font-size: 15px;\r\n    cursor: pointer;\r\n    color: #fff;\r\n    background-color: rgb(46, 46, 46);\r\n    border-radius: 100px;\r\n    border: 1px;\r\n    font-weight: bold;\r\n}\r\n.content_hd .content_hd-item span{\r\n    color: #000;\r\n    font-size: 15px;\r\n    font-family: sans-serif,Helvetica,Arial;\r\n}\r\n.show{\r\n    display: flex;\r\n}\r\n.content__profile-main{\r\n    position: absolute;\r\n    z-index: 16;\r\n    bottom: 150px;\r\n    color: white;\r\n}\r\n.content__profile-main h1{\r\n    white-space: nowrap;\r\n    text-overflow: ellipsis;\r\n    overflow: hidden;\r\n    width: 100%;\r\n    max-width: 80%;\r\n    margin: 10px;\r\n    font-size: 1.75rem;\r\n}\r\n.content__profile-main h1 span {\r\n    position: absolute;\r\n    right: 10px;\r\n}\r\n.content__profile-main-hobbys{\r\n    position: absolute;\r\n    left: 5px;\r\n    display: flex;\r\n    font: 0.75em sans-serif;\r\n    flex-wrap: wrap;\r\n}\r\n.content__profile-main-hobbys div {\r\n    padding: 4px 13px;\r\n    background: rgb(27, 27, 27) ;\r\n    margin: 3px;\r\n    border-radius: 36px;\r\n    white-space: nowrap;\r\n    text-overflow: ellipsis;\r\n    overflow: hidden;\r\n    max-width: 80%;\r\n   \r\n}\r\n#form-login , #form-register{\r\n    opacity: 0;\r\n    display: block;\r\n    position: absolute;\r\n    transition:  .4s ease;\r\n\r\n}\r\n#form-register{\r\n    left: 100%;\r\n}\r\n.login-register h2{\r\n    text-align: center;\r\n}\r\n.form {\r\n    margin-top: 10px;\r\n}\r\n.form input[type=\"email\"], .form input[type=\"password\"],.form input[type=\"text\"] ,.form input[type=\"number\"] ,.form button {\r\n    width: 80%;\r\n    margin-left: 10%;\r\n    margin-bottom: 20px;\r\n    height: 40px;\r\n    border-radius: 5px;\r\n    outline: 0;\r\n    -moz-outline-style: none;\r\n}\r\n.form input[type=\"email\"], .form input[type=\"password\"],.form input[type=\"text\"] ,.form input[type=\"number\"]  {\r\n  border: 1px solid #bbb;\r\n  padding: 0 0 0 10px;\r\n  font-size: 14px;\r\n  \r\n}\r\n.form .button {\r\n    background: #e74c3c;\r\n    border:none;\r\n    color: white;\r\n    font-size: 18px;\r\n    font-weight: 200;\r\n    cursor: pointer;\r\n    transition: box-shadow .4s ease;\r\n}\r\n.form .button :hover {\r\n    box-shadow: 1px 1px 5px #555;  \r\n}\r\n.form .button :active {\r\n    box-shadow: 1px 1px 7px #222;  \r\n}\r\n.form .form_login-button {\r\n    text-align: center;\r\n    font-size: 10px;\r\n    color: #3498db;\r\n    cursor: pointer;\r\n}  \r\n.form p{\r\n    padding-bottom: 10px;\r\n}\r\n.form_register-interest{\r\n    display: flex;\r\n    margin-left: 10%;\r\n    flex-wrap: wrap;\r\n    width: 80%;\r\n    max-width: 80%;\r\n    justify-content: space-between;\r\n}\r\n.form_register-interest > div {\r\n    padding: 5px;\r\n}\r\n@media screen and (max-width: 760px) {\r\n    .nav{\r\n        display: none;\r\n    }\r\n}\r\n"
+        }
+    ]
+}
