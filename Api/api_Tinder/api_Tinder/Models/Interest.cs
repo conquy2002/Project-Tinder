@@ -1,10 +1,12 @@
-﻿namespace api_Tinder.Models
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+namespace api_Tinder.Models
 {
+    [Table("Interest")]
     public class Interest
     {
-        public string Id { get; set; }
+        [Key]
+        public int ID { get; set; }
         public string Hobby { get; set; }
-        public string UserID { get; set; }
-        public User User { get; set; }
     }
 }

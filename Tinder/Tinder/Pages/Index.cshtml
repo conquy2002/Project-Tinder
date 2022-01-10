@@ -4,7 +4,43 @@
     ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<div class="content">
+            <div class="content__profile">
+                <div class="menu" id="js_menu_imgs"></div>
+                <div class="content__profile-imgs" id="js_imgs_profile"></div>
+                <div class="content__profile-main" id="js_main_profile"></div>
+                <div class="slide_button">
+                    <i class='bx bx-chevron-left' onclick="app.plusDivs(-1)"></i>
+                    <i class='bx bx-chevron-right' onclick="app.plusDivs(1)"></i>
+                </div>
+                <div class="content__tt">
+                    <div class="content__tt-i" style = " color: #ffffff ; border: 1px solid #ffffff;"><i class='bx bx-revision' ></i></div>
+                    <div class="content__tt-i" style = " color:#29e2ba ; border: 1px solid #29e2ba"><i class='bx bx-x'></i></div>
+                    <div class="content__tt-i" style = " color: #fa4159 ;  border: 1px solid #fa4159"><i class='bx bxs-heart'></i></div>
+                </div>
+                
+            </div>
+            <div class="content_hd">
+                <button onclick="noneitems()">Chú thích</button>
+                <div class="content_hd-item">
+                    <i class='bx bx-space-bar'></i>
+                    <span>Ảnh tiếp theo</span>
+                </div>
+                <div class="content_hd-item">
+                    <i class='bx bx-chevron-left-square'></i>
+                    <span>Không</span>
+                </div>
+                <div class="content_hd-item">
+                    <i class='bx bx-chevron-right-square'></i>
+                    <span>Thích</span>
+                </div>
+                <div class="content_hd-item">
+                    <i class='bx bx-chevron-up-square'> </i>
+                <span>Mở Hồ Sơ</span>
+                </div>
+                <div class="content_hd-item">
+                    <i class='bx bx-chevron-down-square'> </i>
+                    <span>Đóng Hồ Sơ</span>
+                </div>
+            </div>
+        </div>

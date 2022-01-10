@@ -267,3 +267,4 @@ E:\Project-Tinder\Api\api_Tinder\api_Tinder\obj\Debug\net6.0\api_Tinder.dll
 E:\Project-Tinder\Api\api_Tinder\api_Tinder\obj\Debug\net6.0\ref\api_Tinder.dll
 E:\Project-Tinder\Api\api_Tinder\api_Tinder\obj\Debug\net6.0\api_Tinder.pdb
 E:\Project-Tinder\Api\api_Tinder\api_Tinder\obj\Debug\net6.0\api_Tinder.genruntimeconfig.cache
+E:\Project-Tinder\Api\api_Tinder\api_Tinder\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.InMemory.dll

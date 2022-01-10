@@ -8,9 +8,13 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using api_Tinder.Data;
 using api_Tinder.Models;
+using System.Text.Json;
+using System.Text.Json.Serialization;
+using Microsoft.AspNetCore.Cors;
 
 namespace api_Tinder.Controllers
 {
+    [DisableCors]
     [Route("api/[controller]")]
     [ApiController]
     public class UsersController : ControllerBase
@@ -24,12 +28,51 @@ namespace api_Tinder.Controllers
 
         // GET: api/Users
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<User>>> GetUser()
+        public async Task<ActionResult<User>> GetUserdata(string? fles, int? id)
         {
-            return await _context.User.ToListAsync();
+            //if (id == null && string.IsNullOrEmpty(fles))
+            //{
+            //    return await _context.User.ToListAsync();
+            //}
+
+            if (id == null)
+            {
+                return NotFound();
+            }
+            var userseach = await _context.User.FindAsync(id);
+            if (string.IsNullOrEmpty(fles))
+            {
+                if (userseach == null)
+                {
+                    return NotFound();
+                }
+
+                return userseach;
+            }
+            string[] words = fles.Split(",");
+            foreach (var word in words)
+            {
+                switch (word)
+                {
+                    case "hobby":
+                        var hobby = from m in _context.UserHobby
+                                    where m.UserId == userseach.ID
+                                    join n in _context.Interest
+                                    on m.InterestID equals n.ID
+                                    select n;
+                        
+                            foreach(var h in hobby)
+                            {
+                                userseach.UserHobbies.Add(h);
+                            }
+                        
+                        
+                        break;
+                }
+            }
+            return userseach;
         }
 
-        // GET: api/Users/5
         [HttpGet("{id}")]
         public async Task<ActionResult<User>> GetUser(int id)
         {
@@ -42,6 +85,7 @@ namespace api_Tinder.Controllers
 
             return user;
         }
+        
 
         // PUT: api/Users/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754

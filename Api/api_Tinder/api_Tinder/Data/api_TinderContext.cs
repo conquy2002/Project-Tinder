@@ -16,13 +16,14 @@ namespace api_Tinder.Data
         }
 
         public DbSet<api_Tinder.Models.User> User { get; set; }
-
-        public DbSet<api_Tinder.Models.ImageUser> ImageUser { get; set; }
-        public DbSet<api_Tinder.Models.Messger> Messgers { get; set; }
-        public DbSet<api_Tinder.Models.MessgerId> MessgerIds { get; set; }
-        public DbSet<api_Tinder.Models.Post> Posts { get; set; }
-        public DbSet<api_Tinder.Models.UserConnect> UserConnects { get; set; }
-        public DbSet<api_Tinder.Models.Interest> Interests { get; set; }
+        public DbSet<api_Tinder.Models.ImagerOfUser> ImagerOfUser { get; set; }
+        public DbSet<api_Tinder.Models.Interest> Interest { get; set; }
+        public DbSet<api_Tinder.Models.NotiUser> NotiUser { get; set; }
+        public DbSet<api_Tinder.Models.MessgerUser> MessgerUser { get; set; }
+        public DbSet<api_Tinder.Models.UserHobby> UserHobby { get; set; }
+        public DbSet<api_Tinder.Models.UserConect> UserConect { get; set; }
+        public DbSet<api_Tinder.Models.LoginViewModel> LoginViewModel { get; set; }
+        public DbSet<api_Tinder.Models.RegistrationModel> RegistrationModel { get; set; }
 
 
     }
