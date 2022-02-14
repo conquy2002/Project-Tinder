@@ -12,7 +12,6 @@ using Microsoft.AspNetCore.Cors;
 
 namespace api_Tinder.Controllers
 {
-    [EnableCors]
     [Route("api/[controller]")]
     [ApiController]
     public class ImagerOfUsersController : ControllerBase

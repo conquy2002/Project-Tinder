@@ -12,7 +12,6 @@ using api_Tinder.Models;
 
 namespace api_Tinder.Controllers
 {
-    [EnableCors]
     [Route("api/[controller]")]
     [ApiController]
     public class UserHobbiesController : ControllerBase

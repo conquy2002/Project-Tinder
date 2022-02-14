@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 26,
+            "activePatchIndex": 211,
             "patches": [
                 {
                     "date": 1641804653643,
@@ -112,6 +112,746 @@
                 {
                     "date": 1641810383588,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -79,9 +79,9 @@\n     overflow: scroll;\r\n     height: calc(100% - 90px);\r\n     width: 100%;\r\n     display: flex;\r\n-    flex-wrap: wrap;\r\n+    flex-direction: column;\r\n }\r\n .nav__content-main  .connection{\r\n     position: relative;\r\n     cursor: pointer;\r\n"
+                },
+                {
+                    "date": 1642515319473,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,10 +18,10 @@\n     display: flex;\r\n }\r\n .nav{\r\n     position: relative;\r\n+    max-width: 300px;\r\n     width: 300px;\r\n-    min-width: 250px;\r\n     height: 100%;\r\n     border-right: .1px solid gray;\r\n }\r\n .nav__header{\r\n@@ -59,8 +59,9 @@\n     background-color: #fff;\r\n     padding: 10px;\r\n     height: 100%;\r\n     overflow: hidden;\r\n+    position: relative;\r\n }\r\n .nav_content-button{\r\n     padding: 10px;\r\n }\r\n@@ -76,41 +77,78 @@\n     border-bottom: 3px solid #fd267a;\r\n }\r\n .nav__content-main{\r\n     overflow: scroll;\r\n-    height: calc(100% - 90px);\r\n     width: 100%;\r\n+    height: calc(100% - 100px);\r\n     display: flex;\r\n-    flex-direction: column;\r\n+    flex-wrap: wrap;\r\n+    justify-content: space-between;\r\n+    position: relative;\r\n }\r\n .nav__content-main  .connection{\r\n-    position: relative;\r\n-    cursor: pointer;\r\n+   display: flex;\r\n+   flex-direction: column;\r\n+   position: relative;\r\n+   height: 150\r\n+   px\r\n+   ;\r\n }\r\n .nav__content-main  .connection img{\r\n     width: 100px;\r\n     height: 130px;\r\n     object-fit: cover;\r\n     margin: 10px;\r\n }\r\n+.nav_profile-main .button{\r\n+    margin-top: 10px;\r\n+}\r\n .nav__content-main .connection .connection_span{\r\n-    width: 90%;\r\n-    white-space: pre-wrap;\r\n-    position: absolute;\r\n-    left: 15px;\r\n-    bottom: 40px;\r\n-    color: #fff;\r\n+   position: absolute;\r\n+   width: 100%;\r\n+   color: white;\r\n+   font-weight: bold;\r\n+   bottom: 10px;\r\n+   margin: 10px;\r\n+   font-size: 12px;\r\n+   padding-left: 5px;\r\n+   hyphens: none;\r\n+   white-space: nowrap;\r\n+   text-overflow: ellipsis;\r\n+   max-width: 80%;\r\n+   overflow: hidden;\r\n }\r\n-.nav__content-main .connection .connection_span h3{\r\n-    position: absolute;\r\n-    font-size: 12px;\r\n-    hyphens: none;\r\n-    white-space: nowrap;\r\n-    text-overflow: ellipsis;\r\n-    overflow: hidden;\r\n-    max-width: 80%;\r\n+\r\n+.nav__header--contact {\r\n+    width: 100%;\r\n+    display: flex;\r\n+    flex-direction: row;\r\n+    justify-content: flex-end;\r\n+    align-items: center;\r\n+    margin: 10px;\r\n }\r\n+.nav__header--contact div{\r\n+    text-align: center;\r\n+    width: 32px;\r\n+    height: 32px;\r\n+    background-color: rgba(0,0,0,.32);\r\n+    border-radius: 50%;\r\n+    display: flex;\r\n+    align-content: center;\r\n+    align-items: center;\r\n+    justify-content: center;\r\n+    cursor: pointer;\r\n+}\r\n+.nav__header--contact  i {\r\n+    color: #fff;\r\n+    font-size: 20px;\r\n+    font-weight: 400 !important;\r\n+}    \r\n \r\n+    \r\n+.bottom100{\r\n+    bottom: 100%;\r\n+}\r\n \r\n .nav__content-main .messger{\r\n     height: 80px;\r\n     width: 100%;\r\n@@ -149,11 +187,141 @@\n     overflow: hidden;\r\n     width: 100%;\r\n     max-width: 80%;\r\n }\r\n-::-webkit-scrollbar {\r\n-    display: none;\r\n+\r\n+\r\n+.nav_profile{\r\n+    overflow: scroll;\r\n+    width: 100%;\r\n+    height: calc(100% - 100px);\r\n+    position: absolute;\r\n+    margin-top: 100px;\r\n+    top: 0;\r\n+    display: flex;\r\n+    flex-direction: column;\r\n+    flex-wrap: nowrap;\r\n+    align-items: center;\r\n+    background-color: #fff;\r\n+    padding: 10px;\r\n+    box-shadow: 0px 0px 8px 0px rgb(255 0 0);\r\n }\r\n+.nav_profile-imgavt {\r\n+    border: 1px solid rgba(112 112 112 / 60%);\r\n+    position: relative;\r\n+}\r\n+.nav_profile-imgavt img{\r\n+    width: 250px;\r\n+    height: 250px;\r\n+    object-fit: cover;\r\n+   \r\n+}\r\n+.nav_profile-imgavt::before {\r\n+   content: \"\";\r\n+   position: absolute;\r\n+   background: linear-gradient(\r\n+    180deg, rgb(255 255 255 / 0%), rgb(78 78 78 / 35%));\r\n+   width: 250px;\r\n+   height: 40px;\r\n+   z-index:  2;\r\n+   bottom: 0;\r\n+   \r\n+}\r\n+.nav_profile-main{\r\n+    top: 290px;\r\n+    left: 20px;\r\n+    \r\n+}\r\n+.nav_profile .label{\r\n+    box-sizing: initial;\r\n+    width: 70px;\r\n+    height: 20px;\r\n+    cursor: pointer;\r\n+    margin: 5px;\r\n+    border-radius: 5px;\r\n+    padding: 5px;\r\n+    background: #e74c3c;\r\n+    color: white;\r\n+}\r\n+.nav_profile input[type=\"text\"] {\r\n+    padding: 3px 5px;\r\n+    margin: 5px;\r\n+    width: 100%;\r\n+    font-size: 16px;\r\n+}\r\n+.nav_profile input[type=\"number\"] {\r\n+    padding: 3px 5px;\r\n+    margin: 5px;\r\n+    width: 100%;\r\n+    font-size: 16px;\r\n+}\r\n+.nav_profile select {\r\n+    padding: 3px 5px;\r\n+    margin: 5px;\r\n+    width: 100%;\r\n+    font-size: 16px;\r\n+}\r\n+.nav_profile-main h3{\r\n+    font: 20px sans-serif;\r\n+    margin-bottom: 5px;\r\n+    \r\n+}\r\n+.nav_profile-main-listimg {\r\n+    display: flex;\r\n+    width: 230px;\r\n+    overflow: scroll;\r\n+    flex-direction: column;\r\n+\r\n+}\r\n+.nav_profile-main-listimg  input[type=\"text\"] {\r\n+    padding: 3px 5px;\r\n+    margin: 5px;\r\n+    width: 100%;\r\n+    font-size: 16px;\r\n+    height: 50px;\r\n+}\r\n+.imgconent{\r\n+    display: flex;\r\n+    align-items: center;\r\n+}\r\n+.imgconent img{\r\n+    width: 80px;\r\n+    object-fit: cover;\r\n+    padding: 5px;\r\n+    margin: 5px;\r\n+}\r\n+\r\n+.hilight{\r\n+    font-weight: bold;\r\n+    margin-bottom: 10px;\r\n+    width: 190px;\r\n+    hyphens: none;\r\n+    white-space: nowrap;\r\n+    text-overflow: ellipsis;\r\n+    overflow: hidden;\r\n+}\r\n+.hilight span {\r\n+    position: absolute;\r\n+    left: 232px;\r\n+    font-weight: bold;\r\n+    top: 270px;\r\n+}\r\n+\r\n+.nav_profile-main h3 span{\r\n+    font-size: 16px;\r\n+    word-break: break-word;\r\n+}\r\n+.nav_profile-main .content__profile-main-hobbys{\r\n+    color: #f0f2f4;\r\n+    display: flex;\r\n+    width: 250px;\r\n+    left: 0;\r\n+    position: relative;\r\n+}\r\n+.nav_profile-main .content__profile-main-hobbys div {\r\n+    max-width: 100%;\r\n+}\r\n+\r\n .content{\r\n     height: 100%;\r\n     position: relative;\r\n     overflow: hidden; \r\n@@ -219,8 +387,15 @@\n }\r\n .slide_button i :hover{\r\n     background: rgba(255,255,255,0.15);\r\n }\r\n+.emphasize{\r\n+    background-color: rgba(0,0,0,.32)!important;\r\n+    border-radius: 36px;\r\n+}\r\n+.top100{\r\n+    top: 100%;\r\n+}\r\n .menu{\r\n     position: absolute;\r\n     left: 0;\r\n     z-index: 120;\r\n@@ -339,10 +514,8 @@\n     border-radius: 36px;\r\n     white-space: nowrap;\r\n     text-overflow: ellipsis;\r\n     overflow: hidden;\r\n-    max-width: 80%;\r\n-   \r\n }\r\n #form-login , #form-register{\r\n     opacity: 0;\r\n     display: block;\r\n@@ -359,25 +532,24 @@\n .form {\r\n     margin-top: 10px;\r\n }\r\n \r\n-.form input[type=\"email\"], .form input[type=\"password\"],.form input[type=\"text\"] ,.form input[type=\"number\"] ,.form button {\r\n+#genderoption ,.form input[type=\"email\"], .form input[type=\"password\"],.form input[type=\"text\"] ,.form input[type=\"number\"] ,.form button {\r\n     width: 80%;\r\n     margin-left: 10%;\r\n     margin-bottom: 20px;\r\n     height: 40px;\r\n     border-radius: 5px;\r\n     outline: 0;\r\n-    -moz-outline-style: none;\r\n-    \r\n }\r\n-.form input[type=\"email\"], .form input[type=\"password\"],.form input[type=\"text\"] ,.form input[type=\"number\"]  {\r\n+\r\n+#genderoption ,.form input[type=\"email\"], .form input[type=\"password\"],.form input[type=\"text\"] ,.form input[type=\"number\"]  {\r\n   border: 1px solid #bbb;\r\n   padding: 0 0 0 10px;\r\n   font-size: 14px;\r\n   \r\n }\r\n-.form .button {\r\n+.button {\r\n     background: #e74c3c;\r\n     border:none;\r\n     color: white;\r\n     font-size: 18px;\r\n@@ -392,12 +564,12 @@\n     margin-bottom: 10px;\r\n     margin-bottom: 10px;\r\n \r\n }\r\n-.form .button :hover {\r\n+ .button :hover {\r\n     box-shadow: 1px 1px 5px #555;  \r\n }\r\n-.form .button :active {\r\n+.button :active {\r\n     box-shadow: 1px 1px 7px #222;  \r\n }\r\n .form .form_login-button {\r\n     text-align: center;\r\n@@ -415,11 +587,15 @@\n     width: 80%;\r\n     max-width: 80%;\r\n     justify-content: space-between;\r\n }\r\n+::-webkit-scrollbar{\r\n+    background: white;\r\n+}\r\n .form_register-interest > div {\r\n     padding: 5px;\r\n }\r\n+\r\n @media screen and (max-width: 760px) {\r\n     .nav{\r\n         display: none;\r\n     }\r\n"
+                },
+                {
+                    "date": 1642515353064,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -88,18 +88,19 @@\n .nav__content-main  .connection{\r\n    display: flex;\r\n    flex-direction: column;\r\n    position: relative;\r\n-   height: 150\r\n-   px\r\n-   ;\r\n+   height: 150px;\r\n }\r\n .nav__content-main  .connection img{\r\n     width: 100px;\r\n     height: 130px;\r\n     object-fit: cover;\r\n     margin: 10px;\r\n }\r\n+.nav__content-main  .connection :hover{\r\n+    padding: 15px;\r\n+}\r\n .nav_profile-main .button{\r\n     margin-top: 10px;\r\n }\r\n .nav__content-main .connection .connection_span{\r\n"
+                },
+                {
+                    "date": 1642515363591,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -96,11 +96,9 @@\n     height: 130px;\r\n     object-fit: cover;\r\n     margin: 10px;\r\n }\r\n-.nav__content-main  .connection :hover{\r\n-    padding: 15px;\r\n-}\r\n+\r\n .nav_profile-main .button{\r\n     margin-top: 10px;\r\n }\r\n .nav__content-main .connection .connection_span{\r\n"
+                },
+                {
+                    "date": 1642515368976,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -89,8 +89,9 @@\n    display: flex;\r\n    flex-direction: column;\r\n    position: relative;\r\n    height: 150px;\r\n+   cursor: pointer;\r\n }\r\n .nav__content-main  .connection img{\r\n     width: 100px;\r\n     height: 130px;\r\n"
+                },
+                {
+                    "date": 1642516863388,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -90,8 +90,11 @@\n    flex-direction: column;\r\n    position: relative;\r\n    height: 150px;\r\n    cursor: pointer;\r\n+   \r\n+   align-content: flex-start;\r\n+\r\n }\r\n .nav__content-main  .connection img{\r\n     width: 100px;\r\n     height: 130px;\r\n"
+                },
+                {
+                    "date": 1642516876693,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -83,17 +83,18 @@\n     display: flex;\r\n     flex-wrap: wrap;\r\n     justify-content: space-between;\r\n     position: relative;\r\n+    align-content: flex-start;\r\n }\r\n .nav__content-main  .connection{\r\n    display: flex;\r\n    flex-direction: column;\r\n    position: relative;\r\n    height: 150px;\r\n    cursor: pointer;\r\n    \r\n-   align-content: flex-start;\r\n+   \r\n \r\n }\r\n .nav__content-main  .connection img{\r\n     width: 100px;\r\n"
+                },
+                {
+                    "date": 1642516947078,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -120,9 +120,13 @@\n    text-overflow: ellipsis;\r\n    max-width: 80%;\r\n    overflow: hidden;\r\n }\r\n-\r\n+.nav__content-main .connection .connection_span ::before{\r\n+    content: \"\",\r\n+    background: linear-gradient( \r\n+178deg, rgb(255 255 255 / 0%), rgb(78 78 78 / 35%));\r\n+}\r\n .nav__header--contact {\r\n     width: 100%;\r\n     display: flex;\r\n     flex-direction: row;\r\n"
+                },
+                {
+                    "date": 1642516961675,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -121,11 +121,11 @@\n    max-width: 80%;\r\n    overflow: hidden;\r\n }\r\n .nav__content-main .connection .connection_span ::before{\r\n-    content: \"\",\r\n+    content: \"\";\r\n     background: linear-gradient( \r\n-178deg, rgb(255 255 255 / 0%), rgb(78 78 78 / 35%));\r\n+    178deg, rgb(255 255 255 / 0%), rgb(78 78 78 / 35%));\r\n }\r\n .nav__header--contact {\r\n     width: 100%;\r\n     display: flex;\r\n"
+                },
+                {
+                    "date": 1642517089507,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -120,9 +120,9 @@\n    text-overflow: ellipsis;\r\n    max-width: 80%;\r\n    overflow: hidden;\r\n }\r\n-.nav__content-main .connection .connection_span ::before{\r\n+.nav__content-main .connection .connection_span::before{\r\n     content: \"\";\r\n     background: linear-gradient( \r\n     178deg, rgb(255 255 255 / 0%), rgb(78 78 78 / 35%));\r\n }\r\n"
+                },
+                {
+                    "date": 1642517113351,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -122,10 +122,15 @@\n    overflow: hidden;\r\n }\r\n .nav__content-main .connection .connection_span::before{\r\n     content: \"\";\r\n+    position: absolute;\r\n     background: linear-gradient( \r\n-    178deg, rgb(255 255 255 / 0%), rgb(78 78 78 / 35%));\r\n+180deg, rgb(255 255 255 / 0%), rgb(78 78 78 / 35%));\r\n+    width: 250px;\r\n+    height: 40px;\r\n+    z-index: 2;\r\n+    bottom: 0;\r\n }\r\n .nav__header--contact {\r\n     width: 100%;\r\n     display: flex;\r\n"
+                },
+                {
+                    "date": 1642517238001,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -120,18 +120,9 @@\n    text-overflow: ellipsis;\r\n    max-width: 80%;\r\n    overflow: hidden;\r\n }\r\n-.nav__content-main .connection .connection_span::before{\r\n-    content: \"\";\r\n-    position: absolute;\r\n-    background: linear-gradient( \r\n-180deg, rgb(255 255 255 / 0%), rgb(78 78 78 / 35%));\r\n-    width: 250px;\r\n-    height: 40px;\r\n-    z-index: 2;\r\n-    bottom: 0;\r\n-}\r\n+\r\n .nav__header--contact {\r\n     width: 100%;\r\n     display: flex;\r\n     flex-direction: row;\r\n"
+                },
+                {
+                    "date": 1642518492871,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -75,9 +75,9 @@\n }\r\n .nav-active{\r\n     border-bottom: 3px solid #fd267a;\r\n }\r\n-.nav__content-main{\r\n+.nav__content-main,.content_profile{\r\n     overflow: scroll;\r\n     width: 100%;\r\n     height: calc(100% - 100px);\r\n     display: flex;\r\n"
+                },
+                {
+                    "date": 1642518542206,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -75,9 +75,9 @@\n }\r\n .nav-active{\r\n     border-bottom: 3px solid #fd267a;\r\n }\r\n-.nav__content-main,.content_profile{\r\n+.nav__content-main{\r\n     overflow: scroll;\r\n     width: 100%;\r\n     height: calc(100% - 100px);\r\n     display: flex;\r\n@@ -331,9 +331,9 @@\n     overflow: hidden; \r\n     text-align: center;\r\n     flex-basis: 70%;\r\n }\r\n-.content__profile{\r\n+.content__profile,.content_profile{\r\n     position: absolute;\r\n     width: 300px;\r\n     background-color: #fff;\r\n     height: calc(100vh - 100px);\r\n"
+                },
+                {
+                    "date": 1642518670881,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -309,9 +309,9 @@\n     font-weight: bold;\r\n     top: 270px;\r\n }\r\n \r\n-.nav_profile-main h3 span{\r\n+.nav_profile-main h3 span,.content_profile h3 span{\r\n     font-size: 16px;\r\n     word-break: break-word;\r\n }\r\n .nav_profile-main .content__profile-main-hobbys{\r\n"
+                },
+                {
+                    "date": 1642518746760,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -313,9 +313,9 @@\n .nav_profile-main h3 span,.content_profile h3 span{\r\n     font-size: 16px;\r\n     word-break: break-word;\r\n }\r\n-.nav_profile-main .content__profile-main-hobbys{\r\n+.nav_profile-main .content__profile-main-hobbys ,.content_profile .content__profile-main-hobbys{\r\n     color: #f0f2f4;\r\n     display: flex;\r\n     width: 250px;\r\n     left: 0;\r\n"
+                },
+                {
+                    "date": 1642518876351,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -313,9 +313,9 @@\n .nav_profile-main h3 span,.content_profile h3 span{\r\n     font-size: 16px;\r\n     word-break: break-word;\r\n }\r\n-.nav_profile-main .content__profile-main-hobbys ,.content_profile .content__profile-main-hobbys{\r\n+.nav_profile-main .content__profile-main-hobbys  {\r\n     color: #f0f2f4;\r\n     display: flex;\r\n     width: 250px;\r\n     left: 0;\r\n"
+                },
+                {
+                    "date": 1642518900505,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -597,9 +597,11 @@\n }\r\n .form_register-interest > div {\r\n     padding: 5px;\r\n }\r\n-\r\n+.content_profile .nav_profile-imgavt{\r\n+    width: 100%;\r\n+}\r\n @media screen and (max-width: 760px) {\r\n     .nav{\r\n         display: none;\r\n     }\r\n"
+                },
+                {
+                    "date": 1642518918598,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -597,9 +597,9 @@\n }\r\n .form_register-interest > div {\r\n     padding: 5px;\r\n }\r\n-.content_profile .nav_profile-imgavt{\r\n+.content_profile .nav_profile-imgavt img{\r\n     width: 100%;\r\n }\r\n @media screen and (max-width: 760px) {\r\n     .nav{\r\n"
+                },
+                {
+                    "date": 1642518934287,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -598,8 +598,9 @@\n .form_register-interest > div {\r\n     padding: 5px;\r\n }\r\n .content_profile .nav_profile-imgavt img{\r\n+    height: 300px;\r\n     width: 100%;\r\n }\r\n @media screen and (max-width: 760px) {\r\n     .nav{\r\n"
+                },
+                {
+                    "date": 1642518972337,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -208,13 +208,13 @@\n     background-color: #fff;\r\n     padding: 10px;\r\n     box-shadow: 0px 0px 8px 0px rgb(255 0 0);\r\n }\r\n-.nav_profile-imgavt {\r\n+.nav_profile.nav_profile-imgavt {\r\n     border: 1px solid rgba(112 112 112 / 60%);\r\n     position: relative;\r\n }\r\n-.nav_profile-imgavt img{\r\n+.nav_profile.nav_profile-imgavt img{\r\n     width: 250px;\r\n     height: 250px;\r\n     object-fit: cover;\r\n    \r\n"
+                },
+                {
+                    "date": 1642519002715,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -212,9 +212,9 @@\n .nav_profile.nav_profile-imgavt {\r\n     border: 1px solid rgba(112 112 112 / 60%);\r\n     position: relative;\r\n }\r\n-.nav_profile.nav_profile-imgavt img{\r\n+.nav_profile .nav_profile-imgavt img{\r\n     width: 250px;\r\n     height: 250px;\r\n     object-fit: cover;\r\n    \r\n"
+                },
+                {
+                    "date": 1642519040917,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -208,9 +208,9 @@\n     background-color: #fff;\r\n     padding: 10px;\r\n     box-shadow: 0px 0px 8px 0px rgb(255 0 0);\r\n }\r\n-.nav_profile.nav_profile-imgavt {\r\n+.nav_profile .nav_profile-imgavt {\r\n     border: 1px solid rgba(112 112 112 / 60%);\r\n     position: relative;\r\n }\r\n .nav_profile .nav_profile-imgavt img{\r\n@@ -218,9 +218,9 @@\n     height: 250px;\r\n     object-fit: cover;\r\n    \r\n }\r\n-.nav_profile-imgavt::before {\r\n+.nav_profile .nav_profile-imgavt::before {\r\n    content: \"\";\r\n    position: absolute;\r\n    background: linear-gradient(\r\n     180deg, rgb(255 255 255 / 0%), rgb(78 78 78 / 35%));\r\n"
+                },
+                {
+                    "date": 1642519110786,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -601,8 +601,11 @@\n .content_profile .nav_profile-imgavt img{\r\n     height: 300px;\r\n     width: 100%;\r\n }\r\n+.content_profile .nav_profile-main{\r\n+    \r\n+}\r\n @media screen and (max-width: 760px) {\r\n     .nav{\r\n         display: none;\r\n     }\r\n"
+                },
+                {
+                    "date": 1642519157984,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -602,9 +602,11 @@\n     height: 300px;\r\n     width: 100%;\r\n }\r\n .content_profile .nav_profile-main{\r\n-    \r\n+    display: flex;\r\n+    flex-direction: column;\r\n+    align-items: flex-start;\r\n }\r\n @media screen and (max-width: 760px) {\r\n     .nav{\r\n         display: none;\r\n"
+                },
+                {
+                    "date": 1642519202739,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -606,8 +606,11 @@\n     display: flex;\r\n     flex-direction: column;\r\n     align-items: flex-start;\r\n }\r\n+.content_profile .nav_profile-main h3{\r\n+    font: 18px sans-serif;\r\n+}\r\n @media screen and (max-width: 760px) {\r\n     .nav{\r\n         display: none;\r\n     }\r\n"
+                },
+                {
+                    "date": 1642519254383,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -294,10 +294,10 @@\n     margin: 5px;\r\n }\r\n \r\n .hilight{\r\n-    font-weight: bold;\r\n-    margin-bottom: 10px;\r\n+    font-weight: bold !important;\r\n+    margin-bottom: 10px !important;\r\n     width: 190px;\r\n     hyphens: none;\r\n     white-space: nowrap;\r\n     text-overflow: ellipsis;\r\n"
+                },
+                {
+                    "date": 1642519425749,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -292,9 +292,11 @@\n     object-fit: cover;\r\n     padding: 5px;\r\n     margin: 5px;\r\n }\r\n-\r\n+hr{\r\n+    width: 100%;\r\n+}\r\n .hilight{\r\n     font-weight: bold !important;\r\n     margin-bottom: 10px !important;\r\n     width: 190px;\r\n"
+                },
+                {
+                    "date": 1642519446737,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -610,8 +610,9 @@\n     align-items: flex-start;\r\n }\r\n .content_profile .nav_profile-main h3{\r\n     font: 18px sans-serif;\r\n+    margin: 10px;\r\n }\r\n @media screen and (max-width: 760px) {\r\n     .nav{\r\n         display: none;\r\n"
+                },
+                {
+                    "date": 1642519456087,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -610,9 +610,9 @@\n     align-items: flex-start;\r\n }\r\n .content_profile .nav_profile-main h3{\r\n     font: 18px sans-serif;\r\n-    margin: 10px;\r\n+    margin: 10px -5px;\r\n }\r\n @media screen and (max-width: 760px) {\r\n     .nav{\r\n         display: none;\r\n"
+                },
+                {
+                    "date": 1642519465583,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -610,9 +610,9 @@\n     align-items: flex-start;\r\n }\r\n .content_profile .nav_profile-main h3{\r\n     font: 18px sans-serif;\r\n-    margin: 10px -5px;\r\n+    margin: 5px 10px;\r\n }\r\n @media screen and (max-width: 760px) {\r\n     .nav{\r\n         display: none;\r\n"
+                },
+                {
+                    "date": 1642519485359,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -610,9 +610,9 @@\n     align-items: flex-start;\r\n }\r\n .content_profile .nav_profile-main h3{\r\n     font: 18px sans-serif;\r\n-    margin: 5px 10px;\r\n+    margin: 2px 10px;\r\n }\r\n @media screen and (max-width: 760px) {\r\n     .nav{\r\n         display: none;\r\n"
+                },
+                {
+                    "date": 1642519668514,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -612,8 +612,11 @@\n .content_profile .nav_profile-main h3{\r\n     font: 18px sans-serif;\r\n     margin: 2px 10px;\r\n }\r\n+.content_profile .hilight span{\r\n+    top: 300px;\r\n+}\r\n @media screen and (max-width: 760px) {\r\n     .nav{\r\n         display: none;\r\n     }\r\n"
+                },
+                {
+                    "date": 1642519681184,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -613,9 +613,9 @@\n     font: 18px sans-serif;\r\n     margin: 2px 10px;\r\n }\r\n .content_profile .hilight span{\r\n-    top: 300px;\r\n+    top: 310px;\r\n }\r\n @media screen and (max-width: 760px) {\r\n     .nav{\r\n         display: none;\r\n"
+                },
+                {
+                    "date": 1642520826566,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -350,8 +350,17 @@\n     top: 0;\r\n     z-index: 15;\r\n     width: 100%;\r\n     height: 100%;\r\n+} \r\n+.content__profile-imgs span{\r\n+    position: absolute;\r\n+    color: white;\r\n+    font-size: 20px;\r\n+    font-weight: bold;\r\n+    bottom: 200\r\n+px\r\n+;\r\n }\r\n .content__profile-imgs h1{\r\n     position: absolute;\r\n     left: 50%;\r\n"
+                },
+                {
+                    "date": 1642520855734,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -356,11 +356,9 @@\n     position: absolute;\r\n     color: white;\r\n     font-size: 20px;\r\n     font-weight: bold;\r\n-    bottom: 200\r\n-px\r\n-;\r\n+    bottom: 200px;\r\n }\r\n .content__profile-imgs h1{\r\n     position: absolute;\r\n     left: 50%;\r\n"
+                },
+                {
+                    "date": 1642520876763,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -344,9 +344,9 @@\n     transform: translate(-50%, -50%);\r\n     overflow: hidden;\r\n }\r\n .content__profile-imgs{\r\n-    position: absolute;\r\n+    position: relative;\r\n     left: 0;\r\n     top: 0;\r\n     z-index: 15;\r\n     width: 100%;\r\n"
+                },
+                {
+                    "date": 1642520957361,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -372,8 +372,9 @@\n     background-size: cover;\r\n     background-position: 50% 50%;\r\n     transition: left 0s .75s;\r\n     object-fit: cover;\r\n+    position: relative;\r\n }\r\n .slide_button{\r\n     position: absolute;\r\n     left: 0;\r\n"
+                },
+                {
+                    "date": 1642521062387,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -365,8 +365,12 @@\n     top: 50%;\r\n     z-index: 30;\r\n     transform: translate(-50%, -50%);\r\n }\r\n+.imgandbody{\r\n+    width: 100%;\r\n+    height: 100%;\r\n+}\r\n .slide {\r\n     width: 100%;\r\n     height: 100%;\r\n     background-size: cover;\r\n"
+                },
+                {
+                    "date": 1642521100093,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -368,17 +368,18 @@\n }\r\n .imgandbody{\r\n     width: 100%;\r\n     height: 100%;\r\n+    \r\n+    position: relative;\r\n }\r\n .slide {\r\n     width: 100%;\r\n     height: 100%;\r\n     background-size: cover;\r\n     background-position: 50% 50%;\r\n     transition: left 0s .75s;\r\n     object-fit: cover;\r\n-    position: relative;\r\n }\r\n .slide_button{\r\n     position: absolute;\r\n     left: 0;\r\n"
+                },
+                {
+                    "date": 1642521137658,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -368,9 +368,8 @@\n }\r\n .imgandbody{\r\n     width: 100%;\r\n     height: 100%;\r\n-    \r\n     position: relative;\r\n }\r\n .slide {\r\n     width: 100%;\r\n"
+                },
+                {
+                    "date": 1642521302003,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -365,14 +365,14 @@\n     top: 50%;\r\n     z-index: 30;\r\n     transform: translate(-50%, -50%);\r\n }\r\n-.imgandbody{\r\n+.slide{\r\n     width: 100%;\r\n     height: 100%;\r\n     position: relative;\r\n }\r\n-.slide {\r\n+.slide img{\r\n     width: 100%;\r\n     height: 100%;\r\n     background-size: cover;\r\n     background-position: 50% 50%;\r\n"
+                },
+                {
+                    "date": 1642521435937,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -357,8 +357,9 @@\n     color: white;\r\n     font-size: 20px;\r\n     font-weight: bold;\r\n     bottom: 200px;\r\n+    transform: translate(0, -50%);\r\n }\r\n .content__profile-imgs h1{\r\n     position: absolute;\r\n     left: 50%;\r\n"
+                },
+                {
+                    "date": 1642521447154,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -357,8 +357,9 @@\n     color: white;\r\n     font-size: 20px;\r\n     font-weight: bold;\r\n     bottom: 200px;\r\n+    left: 50%;\r\n     transform: translate(0, -50%);\r\n }\r\n .content__profile-imgs h1{\r\n     position: absolute;\r\n"
+                },
+                {
+                    "date": 1642521456449,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -358,9 +358,9 @@\n     font-size: 20px;\r\n     font-weight: bold;\r\n     bottom: 200px;\r\n     left: 50%;\r\n-    transform: translate(0, -50%);\r\n+    transform: translate(-50%,0);\r\n }\r\n .content__profile-imgs h1{\r\n     position: absolute;\r\n     left: 50%;\r\n"
+                },
+                {
+                    "date": 1642521482564,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -359,8 +359,9 @@\n     font-weight: bold;\r\n     bottom: 200px;\r\n     left: 50%;\r\n     transform: translate(-50%,0);\r\n+    width: 100%;\r\n }\r\n .content__profile-imgs h1{\r\n     position: absolute;\r\n     left: 50%;\r\n"
+                },
+                {
+                    "date": 1642522080704,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -422,8 +422,23 @@\n     z-index: 120;\r\n     width: 100%;\r\n     top: 5px;\r\n }\r\n+#js_hiddenprofile{\r\n+    position: absolute;\r\n+    width: 50px;\r\n+    height: 50px;\r\n+    background: #E74C3c;\r\n+    display: flex;\r\n+    /* align-content: center; */\r\n+    justify-content: center;\r\n+    align-items: center;\r\n+    border-radius: 50%;\r\n+    color: white;\r\n+    font-size: 20px;\r\n+    top: 50%;\r\n+    right: 13px;\r\n+}\r\n .menu label {\r\n     cursor: pointer;\r\n     display: inline-block;\r\n     width: 15px;\r\n"
+                },
+                {
+                    "date": 1642522097106,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -436,8 +436,9 @@\n     color: white;\r\n     font-size: 20px;\r\n     top: 50%;\r\n     right: 13px;\r\n+    cursor: pointer;\r\n }\r\n .menu label {\r\n     cursor: pointer;\r\n     display: inline-block;\r\n"
+                },
+                {
+                    "date": 1642523017065,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -75,9 +75,9 @@\n }\r\n .nav-active{\r\n     border-bottom: 3px solid #fd267a;\r\n }\r\n-.nav__content-main{\r\n+.nav__content-main,.content_messger{\r\n     overflow: scroll;\r\n     width: 100%;\r\n     height: calc(100% - 100px);\r\n     display: flex;\r\n"
+                },
+                {
+                    "date": 1642523061949,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -646,8 +646,11 @@\n }\r\n .content_profile .hilight span{\r\n     top: 310px;\r\n }\r\n+.content_messger{\r\n+    overflow: hidden;\r\n+}\r\n @media screen and (max-width: 760px) {\r\n     .nav{\r\n         display: none;\r\n     }\r\n"
+                },
+                {
+                    "date": 1642523118189,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -648,8 +648,9 @@\n     top: 310px;\r\n }\r\n .content_messger{\r\n     overflow: hidden;\r\n+    s\r\n }\r\n @media screen and (max-width: 760px) {\r\n     .nav{\r\n         display: none;\r\n"
+                },
+                {
+                    "date": 1642523126866,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -648,9 +648,9 @@\n     top: 310px;\r\n }\r\n .content_messger{\r\n     overflow: hidden;\r\n-    s\r\n+    \r\n }\r\n @media screen and (max-width: 760px) {\r\n     .nav{\r\n         display: none;\r\n"
+                },
+                {
+                    "date": 1642523196832,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -648,9 +648,9 @@\n     top: 310px;\r\n }\r\n .content_messger{\r\n     overflow: hidden;\r\n-    \r\n+    width: 100vh;\r\n }\r\n @media screen and (max-width: 760px) {\r\n     .nav{\r\n         display: none;\r\n"
+                },
+                {
+                    "date": 1642523256950,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -75,9 +75,9 @@\n }\r\n .nav-active{\r\n     border-bottom: 3px solid #fd267a;\r\n }\r\n-.nav__content-main,.content_messger{\r\n+.nav__content-main{\r\n     overflow: scroll;\r\n     width: 100%;\r\n     height: calc(100% - 100px);\r\n     display: flex;\r\n"
+                },
+                {
+                    "date": 1642523282506,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -649,8 +649,9 @@\n }\r\n .content_messger{\r\n     overflow: hidden;\r\n     width: 100vh;\r\n+    position: fixed;\r\n }\r\n @media screen and (max-width: 760px) {\r\n     .nav{\r\n         display: none;\r\n"
+                },
+                {
+                    "date": 1642523320333,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -648,9 +648,9 @@\n     top: 310px;\r\n }\r\n .content_messger{\r\n     overflow: hidden;\r\n-    width: 100vh;\r\n+    height: 100vh;\r\n     position: fixed;\r\n }\r\n @media screen and (max-width: 760px) {\r\n     .nav{\r\n"
+                },
+                {
+                    "date": 1642523344387,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -650,9 +650,13 @@\n .content_messger{\r\n     overflow: hidden;\r\n     height: 100vh;\r\n     position: fixed;\r\n+    display: flex;\r\n }\r\n+.content_messger-main{\r\n+\r\n+}\r\n @media screen and (max-width: 760px) {\r\n     .nav{\r\n         display: none;\r\n     }\r\n"
+                },
+                {
+                    "date": 1642523356322,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -653,9 +653,9 @@\n     position: fixed;\r\n     display: flex;\r\n }\r\n .content_messger-main{\r\n-\r\n+    flex-basis: 70%;\r\n }\r\n @media screen and (max-width: 760px) {\r\n     .nav{\r\n         display: none;\r\n"
+                },
+                {
+                    "date": 1642523403008,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -655,8 +655,11 @@\n }\r\n .content_messger-main{\r\n     flex-basis: 70%;\r\n }\r\n+.content_messger-profile{\r\n+    flex-basis: 30%;\r\n+}\r\n @media screen and (max-width: 760px) {\r\n     .nav{\r\n         display: none;\r\n     }\r\n"
+                },
+                {
+                    "date": 1642523413707,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -654,11 +654,13 @@\n     display: flex;\r\n }\r\n .content_messger-main{\r\n     flex-basis: 70%;\r\n+    height: 100%;\r\n }\r\n .content_messger-profile{\r\n     flex-basis: 30%;\r\n+    height: 100%;\r\n }\r\n @media screen and (max-width: 760px) {\r\n     .nav{\r\n         display: none;\r\n"
+                },
+                {
+                    "date": 1642523537125,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -656,8 +656,12 @@\n .content_messger-main{\r\n     flex-basis: 70%;\r\n     height: 100%;\r\n }\r\n+.content_messger-main{\r\n+    height: 60px;\r\n+    width: 100%;\r\n+}\r\n .content_messger-profile{\r\n     flex-basis: 30%;\r\n     height: 100%;\r\n }\r\n"
+                },
+                {
+                    "date": 1642523551627,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -659,8 +659,9 @@\n }\r\n .content_messger-main{\r\n     height: 60px;\r\n     width: 100%;\r\n+    background-color:#fff;\r\n }\r\n .content_messger-profile{\r\n     flex-basis: 30%;\r\n     height: 100%;\r\n"
+                },
+                {
+                    "date": 1642523558915,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -661,8 +661,11 @@\n     height: 60px;\r\n     width: 100%;\r\n     background-color:#fff;\r\n }\r\n+.content_messger-main img{\r\n+    \r\n+}\r\n .content_messger-profile{\r\n     flex-basis: 30%;\r\n     height: 100%;\r\n }\r\n"
+                },
+                {
+                    "date": 1642523597893,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -656,15 +656,15 @@\n .content_messger-main{\r\n     flex-basis: 70%;\r\n     height: 100%;\r\n }\r\n-.content_messger-main{\r\n+.content_messger-header{\r\n     height: 60px;\r\n     width: 100%;\r\n     background-color:#fff;\r\n }\r\n .content_messger-main img{\r\n-    \r\n+\r\n }\r\n .content_messger-profile{\r\n     flex-basis: 30%;\r\n     height: 100%;\r\n"
+                },
+                {
+                    "date": 1642523707015,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -651,10 +651,12 @@\n     overflow: hidden;\r\n     height: 100vh;\r\n     position: fixed;\r\n     display: flex;\r\n+    width: 100%;\r\n }\r\n .content_messger-main{\r\n+    width: 100%;\r\n     flex-basis: 70%;\r\n     height: 100%;\r\n }\r\n .content_messger-header{\r\n"
+                },
+                {
+                    "date": 1642523721678,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -663,10 +663,10 @@\n     height: 60px;\r\n     width: 100%;\r\n     background-color:#fff;\r\n }\r\n-.content_messger-main img{\r\n-\r\n+.content_messger-header img{\r\n+    \r\n }\r\n .content_messger-profile{\r\n     flex-basis: 30%;\r\n     height: 100%;\r\n"
+                },
+                {
+                    "date": 1642523731241,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -664,9 +664,10 @@\n     width: 100%;\r\n     background-color:#fff;\r\n }\r\n .content_messger-header img{\r\n-    \r\n+    width: 50px;\r\n+    height: 50px;\r\n }\r\n .content_messger-profile{\r\n     flex-basis: 30%;\r\n     height: 100%;\r\n"
+                },
+                {
+                    "date": 1642523737530,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -662,8 +662,9 @@\n .content_messger-header{\r\n     height: 60px;\r\n     width: 100%;\r\n     background-color:#fff;\r\n+    display: flex;\r\n }\r\n .content_messger-header img{\r\n     width: 50px;\r\n     height: 50px;\r\n"
+                },
+                {
+                    "date": 1642523763333,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -669,8 +669,9 @@\n     width: 50px;\r\n     height: 50px;\r\n }\r\n .content_messger-profile{\r\n+    width: 100%;\r\n     flex-basis: 30%;\r\n     height: 100%;\r\n }\r\n @media screen and (max-width: 760px) {\r\n"
+                },
+                {
+                    "date": 1642523834038,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -654,24 +654,21 @@\n     display: flex;\r\n     width: 100%;\r\n }\r\n .content_messger-main{\r\n-    width: 100%;\r\n     flex-basis: 70%;\r\n     height: 100%;\r\n }\r\n .content_messger-header{\r\n     height: 60px;\r\n-    width: 100%;\r\n     background-color:#fff;\r\n     display: flex;\r\n }\r\n .content_messger-header img{\r\n     width: 50px;\r\n     height: 50px;\r\n }\r\n .content_messger-profile{\r\n-    width: 100%;\r\n     flex-basis: 30%;\r\n     height: 100%;\r\n }\r\n @media screen and (max-width: 760px) {\r\n"
+                },
+                {
+                    "date": 1642523963370,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -654,9 +654,9 @@\n     display: flex;\r\n     width: 100%;\r\n }\r\n .content_messger-main{\r\n-    flex-basis: 70%;\r\n+    width: 80%;\r\n     height: 100%;\r\n }\r\n .content_messger-header{\r\n     height: 60px;\r\n"
+                },
+                {
+                    "date": 1642523969525,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -667,9 +667,8 @@\n     width: 50px;\r\n     height: 50px;\r\n }\r\n .content_messger-profile{\r\n-    flex-basis: 30%;\r\n     height: 100%;\r\n }\r\n @media screen and (max-width: 760px) {\r\n     .nav{\r\n"
+                },
+                {
+                    "date": 1642524005779,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -655,8 +655,9 @@\n     width: 100%;\r\n }\r\n .content_messger-main{\r\n     width: 80%;\r\n+    position: relative;\r\n     height: 100%;\r\n }\r\n .content_messger-header{\r\n     height: 60px;\r\n"
+                },
+                {
+                    "date": 1642524011200,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -669,8 +669,10 @@\n     height: 50px;\r\n }\r\n .content_messger-profile{\r\n     height: 100%;\r\n+    position: relative;\r\n+\r\n }\r\n @media screen and (max-width: 760px) {\r\n     .nav{\r\n         display: none;\r\n"
+                },
+                {
+                    "date": 1642524099290,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -672,8 +672,11 @@\n     height: 100%;\r\n     position: relative;\r\n \r\n }\r\n+.content_messger-profile img{\r\n+    width: 100px;\r\n+}\r\n @media screen and (max-width: 760px) {\r\n     .nav{\r\n         display: none;\r\n     }\r\n"
+                },
+                {
+                    "date": 1642524105461,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -673,9 +673,9 @@\n     position: relative;\r\n \r\n }\r\n .content_messger-profile img{\r\n-    width: 100px;\r\n+    width: 600px;\r\n }\r\n @media screen and (max-width: 760px) {\r\n     .nav{\r\n         display: none;\r\n"
+                },
+                {
+                    "date": 1642524131086,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -651,9 +651,8 @@\n     overflow: hidden;\r\n     height: 100vh;\r\n     position: fixed;\r\n     display: flex;\r\n-    width: 100%;\r\n }\r\n .content_messger-main{\r\n     width: 80%;\r\n     position: relative;\r\n@@ -673,9 +672,9 @@\n     position: relative;\r\n \r\n }\r\n .content_messger-profile img{\r\n-    width: 600px;\r\n+    width: 200px;\r\n }\r\n @media screen and (max-width: 760px) {\r\n     .nav{\r\n         display: none;\r\n"
+                },
+                {
+                    "date": 1642524284991,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -653,9 +653,9 @@\n     position: fixed;\r\n     display: flex;\r\n }\r\n .content_messger-main{\r\n-    width: 80%;\r\n+    width: 700px;\r\n     position: relative;\r\n     height: 100%;\r\n }\r\n .content_messger-header{\r\n"
+                },
+                {
+                    "date": 1642524308459,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -665,8 +665,9 @@\n }\r\n .content_messger-header img{\r\n     width: 50px;\r\n     height: 50px;\r\n+    border-radius: 50%;\r\n }\r\n .content_messger-profile{\r\n     height: 100%;\r\n     position: relative;\r\n"
+                },
+                {
+                    "date": 1642524315798,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -661,8 +661,9 @@\n .content_messger-header{\r\n     height: 60px;\r\n     background-color:#fff;\r\n     display: flex;\r\n+    padding: 10px;\r\n }\r\n .content_messger-header img{\r\n     width: 50px;\r\n     height: 50px;\r\n"
+                },
+                {
+                    "date": 1642524404552,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -659,11 +659,13 @@\n     height: 100%;\r\n }\r\n .content_messger-header{\r\n     height: 60px;\r\n-    background-color:#fff;\r\n+    background-color: #fff;\r\n     display: flex;\r\n-    padding: 10px;\r\n+    padding: 11px;\r\n+    box-sizing: content-box;\r\n+    align-items: center;\r\n }\r\n .content_messger-header img{\r\n     width: 50px;\r\n     height: 50px;\r\n"
+                },
+                {
+                    "date": 1642524420394,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -669,8 +669,9 @@\n .content_messger-header img{\r\n     width: 50px;\r\n     height: 50px;\r\n     border-radius: 50%;\r\n+    margin-left: 10px;\r\n }\r\n .content_messger-profile{\r\n     height: 100%;\r\n     position: relative;\r\n"
+                },
+                {
+                    "date": 1642524426508,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -669,9 +669,9 @@\n .content_messger-header img{\r\n     width: 50px;\r\n     height: 50px;\r\n     border-radius: 50%;\r\n-    margin-left: 10px;\r\n+    margin-right: 10px;\r\n }\r\n .content_messger-profile{\r\n     height: 100%;\r\n     position: relative;\r\n"
+                },
+                {
+                    "date": 1642524480216,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -665,8 +665,12 @@\n     padding: 11px;\r\n     box-sizing: content-box;\r\n     align-items: center;\r\n }\r\n+.content_messger-body{\r\n+    background-color: #fff;\r\n+    height: 500px;\r\n+}\r\n .content_messger-header img{\r\n     width: 50px;\r\n     height: 50px;\r\n     border-radius: 50%;\r\n"
+                },
+                {
+                    "date": 1642524501991,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -666,9 +666,9 @@\n     box-sizing: content-box;\r\n     align-items: center;\r\n }\r\n .content_messger-body{\r\n-    background-color: #fff;\r\n+    background-color: #d2d7db;\r\n     height: 500px;\r\n }\r\n .content_messger-header img{\r\n     width: 50px;\r\n"
+                },
+                {
+                    "date": 1642524515030,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -656,8 +656,9 @@\n .content_messger-main{\r\n     width: 700px;\r\n     position: relative;\r\n     height: 100%;\r\n+    border: 1px solid #ccc;\r\n }\r\n .content_messger-header{\r\n     height: 60px;\r\n     background-color: #fff;\r\n"
+                },
+                {
+                    "date": 1642524532536,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -679,9 +679,8 @@\n }\r\n .content_messger-profile{\r\n     height: 100%;\r\n     position: relative;\r\n-\r\n }\r\n .content_messger-profile img{\r\n     width: 200px;\r\n }\r\n"
+                },
+                {
+                    "date": 1642524549600,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -670,8 +670,12 @@\n .content_messger-body{\r\n     background-color: #d2d7db;\r\n     height: 500px;\r\n }\r\n+.content_messger-input{\r\n+    background-color: #fff;\r\n+    height: auto;\r\n+}\r\n .content_messger-header img{\r\n     width: 50px;\r\n     height: 50px;\r\n     border-radius: 50%;\r\n"
+                },
+                {
+                    "date": 1642524560723,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -672,9 +672,9 @@\n     height: 500px;\r\n }\r\n .content_messger-input{\r\n     background-color: #fff;\r\n-    height: auto;\r\n+    height: 60px;\r\n }\r\n .content_messger-header img{\r\n     width: 50px;\r\n     height: 50px;\r\n"
+                },
+                {
+                    "date": 1642524586680,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -672,9 +672,8 @@\n     height: 500px;\r\n }\r\n .content_messger-input{\r\n     background-color: #fff;\r\n-    height: 60px;\r\n }\r\n .content_messger-header img{\r\n     width: 50px;\r\n     height: 50px;\r\n"
+                },
+                {
+                    "date": 1642524758059,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -672,8 +672,9 @@\n     height: 500px;\r\n }\r\n .content_messger-input{\r\n     background-color: #fff;\r\n+    display: flex;\r\n }\r\n .content_messger-header img{\r\n     width: 50px;\r\n     height: 50px;\r\n"
+                },
+                {
+                    "date": 1642524906259,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -674,8 +674,12 @@\n .content_messger-input{\r\n     background-color: #fff;\r\n     display: flex;\r\n }\r\n+.content_messger-input input[type=\"text\"]{\r\n+    width: 100%;\r\n+    padding: 10px;\r\n+}\r\n .content_messger-header img{\r\n     width: 50px;\r\n     height: 50px;\r\n     border-radius: 50%;\r\n"
+                },
+                {
+                    "date": 1642524945028,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -674,8 +674,12 @@\n .content_messger-input{\r\n     background-color: #fff;\r\n     display: flex;\r\n }\r\n+.content_messger-input .tacvu{\r\n+    display: flex;\r\n+    padding: 50px\r\n+}\r\n .content_messger-input input[type=\"text\"]{\r\n     width: 100%;\r\n     padding: 10px;\r\n }\r\n"
+                },
+                {
+                    "date": 1642525028917,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -678,8 +678,12 @@\n .content_messger-input .tacvu{\r\n     display: flex;\r\n     padding: 50px\r\n }\r\n+.content_messger-input .tacvu input[type=\"file\"]{\r\n+    position: absolute;\r\n+    opacity: 0;\r\n+}\r\n .content_messger-input input[type=\"text\"]{\r\n     width: 100%;\r\n     padding: 10px;\r\n }\r\n"
+                },
+                {
+                    "date": 1642525069620,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -676,9 +676,9 @@\n     display: flex;\r\n }\r\n .content_messger-input .tacvu{\r\n     display: flex;\r\n-    padding: 50px\r\n+    padding: 10px\r\n }\r\n .content_messger-input .tacvu input[type=\"file\"]{\r\n     position: absolute;\r\n     opacity: 0;\r\n"
+                },
+                {
+                    "date": 1642525108500,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -681,8 +681,9 @@\n }\r\n .content_messger-input .tacvu input[type=\"file\"]{\r\n     position: absolute;\r\n     opacity: 0;\r\n+    bottom: -1000px;\r\n }\r\n .content_messger-input input[type=\"text\"]{\r\n     width: 100%;\r\n     padding: 10px;\r\n"
+                },
+                {
+                    "date": 1642525172462,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -678,8 +678,11 @@\n .content_messger-input .tacvu{\r\n     display: flex;\r\n     padding: 10px\r\n }\r\n+.content_messger-input .tacvu div{\r\n+    padding: 10px;\r\n+}\r\n .content_messger-input .tacvu input[type=\"file\"]{\r\n     position: absolute;\r\n     opacity: 0;\r\n     bottom: -1000px;\r\n"
+                },
+                {
+                    "date": 1642525199356,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -689,8 +689,9 @@\n }\r\n .content_messger-input input[type=\"text\"]{\r\n     width: 100%;\r\n     padding: 10px;\r\n+    border: 1px solid #ccc;;\r\n }\r\n .content_messger-header img{\r\n     width: 50px;\r\n     height: 50px;\r\n"
+                },
+                {
+                    "date": 1642525229284,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -689,9 +689,9 @@\n }\r\n .content_messger-input input[type=\"text\"]{\r\n     width: 100%;\r\n     padding: 10px;\r\n-    border: 1px solid #ccc;;\r\n+    border: 1px solid #ccc;\r\n }\r\n .content_messger-header img{\r\n     width: 50px;\r\n     height: 50px;\r\n"
+                },
+                {
+                    "date": 1642525243633,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -673,8 +673,10 @@\n }\r\n .content_messger-input{\r\n     background-color: #fff;\r\n     display: flex;\r\n+    position: relative;\r\n+    bottom: 0px;\r\n }\r\n .content_messger-input .tacvu{\r\n     display: flex;\r\n     padding: 10px\r\n"
+                },
+                {
+                    "date": 1642525267462,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -668,9 +668,8 @@\n     align-items: center;\r\n }\r\n .content_messger-body{\r\n     background-color: #d2d7db;\r\n-    height: 500px;\r\n }\r\n .content_messger-input{\r\n     background-color: #fff;\r\n     display: flex;\r\n"
+                },
+                {
+                    "date": 1642525285386,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -665,8 +665,10 @@\n     display: flex;\r\n     padding: 11px;\r\n     box-sizing: content-box;\r\n     align-items: center;\r\n+    position: relative;\r\n+    top: 0px;\r\n }\r\n .content_messger-body{\r\n     background-color: #d2d7db;\r\n }\r\n"
+                },
+                {
+                    "date": 1642525304716,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -674,9 +674,9 @@\n }\r\n .content_messger-input{\r\n     background-color: #fff;\r\n     display: flex;\r\n-    position: relative;\r\n+    position: fixed;\r\n     bottom: 0px;\r\n }\r\n .content_messger-input .tacvu{\r\n     display: flex;\r\n"
+                },
+                {
+                    "date": 1642525312568,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -676,8 +676,9 @@\n     background-color: #fff;\r\n     display: flex;\r\n     position: fixed;\r\n     bottom: 0px;\r\n+    width: 100%;\r\n }\r\n .content_messger-input .tacvu{\r\n     display: flex;\r\n     padding: 10px\r\n"
+                },
+                {
+                    "date": 1642525318199,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -676,9 +676,9 @@\n     background-color: #fff;\r\n     display: flex;\r\n     position: fixed;\r\n     bottom: 0px;\r\n-    width: 100%;\r\n+    width: 700px;\r\n }\r\n .content_messger-input .tacvu{\r\n     display: flex;\r\n     padding: 10px\r\n"
+                },
+                {
+                    "date": 1642525356137,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -678,9 +678,9 @@\n     position: fixed;\r\n     bottom: 0px;\r\n     width: 700px;\r\n }\r\n-.content_messger-input .tacvu{\r\n+.content_messger-input .tacvu, .sender{\r\n     display: flex;\r\n     padding: 10px\r\n }\r\n .content_messger-input .tacvu div{\r\n"
+                },
+                {
+                    "date": 1642525393229,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -680,9 +680,9 @@\n     width: 700px;\r\n }\r\n .content_messger-input .tacvu, .sender{\r\n     display: flex;\r\n-    padding: 10px\r\n+    padding: 10px;\r\n }\r\n .content_messger-input .tacvu div{\r\n     padding: 10px;\r\n }\r\n"
+                },
+                {
+                    "date": 1642525429728,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -681,8 +681,10 @@\n }\r\n .content_messger-input .tacvu, .sender{\r\n     display: flex;\r\n     padding: 10px;\r\n+    align-items: center;\r\n+    justify-content: center;\r\n }\r\n .content_messger-input .tacvu div{\r\n     padding: 10px;\r\n }\r\n"
+                },
+                {
+                    "date": 1642525456859,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -684,8 +684,12 @@\n     padding: 10px;\r\n     align-items: center;\r\n     justify-content: center;\r\n }\r\n+.sender{\r\n+    width: 60px;\r\n+    height: 60px;\r\n+}\r\n .content_messger-input .tacvu div{\r\n     padding: 10px;\r\n }\r\n .content_messger-input .tacvu input[type=\"file\"]{\r\n"
+                },
+                {
+                    "date": 1642525485603,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -670,8 +670,10 @@\n     top: 0px;\r\n }\r\n .content_messger-body{\r\n     background-color: #d2d7db;\r\n+    width: 100%;\r\n+    height: 100%;\r\n }\r\n .content_messger-input{\r\n     background-color: #fff;\r\n     display: flex;\r\n"
+                },
+                {
+                    "date": 1642525510760,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -687,10 +687,10 @@\n     align-items: center;\r\n     justify-content: center;\r\n }\r\n .sender{\r\n-    width: 60px;\r\n-    height: 60px;\r\n+    width: 59px;\r\n+    height: 59px;\r\n }\r\n .content_messger-input .tacvu div{\r\n     padding: 10px;\r\n }\r\n"
+                },
+                {
+                    "date": 1642525529915,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -687,10 +687,10 @@\n     align-items: center;\r\n     justify-content: center;\r\n }\r\n .sender{\r\n-    width: 59px;\r\n-    height: 59px;\r\n+    width: 60px;\r\n+    height: 60px;\r\n }\r\n .content_messger-input .tacvu div{\r\n     padding: 10px;\r\n }\r\n"
+                },
+                {
+                    "date": 1642525543357,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -685,8 +685,9 @@\n     display: flex;\r\n     padding: 10px;\r\n     align-items: center;\r\n     justify-content: center;\r\n+    font: 1em sans-serif;\r\n }\r\n .sender{\r\n     width: 60px;\r\n     height: 60px;\r\n"
+                },
+                {
+                    "date": 1642525559342,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -685,9 +685,9 @@\n     display: flex;\r\n     padding: 10px;\r\n     align-items: center;\r\n     justify-content: center;\r\n-    font: 1em sans-serif;\r\n+    font: 1.25em sans-serif;\r\n }\r\n .sender{\r\n     width: 60px;\r\n     height: 60px;\r\n"
+                },
+                {
+                    "date": 1642525573188,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -685,9 +685,9 @@\n     display: flex;\r\n     padding: 10px;\r\n     align-items: center;\r\n     justify-content: center;\r\n-    font: 1.25em sans-serif;\r\n+    font: 1.05em sans-serif;\r\n }\r\n .sender{\r\n     width: 60px;\r\n     height: 60px;\r\n"
+                },
+                {
+                    "date": 1642525583944,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -703,8 +703,9 @@\n .content_messger-input input[type=\"text\"]{\r\n     width: 100%;\r\n     padding: 10px;\r\n     border: 1px solid #ccc;\r\n+    font: 1.05em sans-serif;\r\n }\r\n .content_messger-header img{\r\n     width: 50px;\r\n     height: 50px;\r\n"
+                },
+                {
+                    "date": 1642525653029,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -693,8 +693,9 @@\n     height: 60px;\r\n }\r\n .content_messger-input .tacvu div{\r\n     padding: 10px;\r\n+    background:rgb(112 112 112);\r\n }\r\n .content_messger-input .tacvu input[type=\"file\"]{\r\n     position: absolute;\r\n     opacity: 0;\r\n"
+                },
+                {
+                    "date": 1642525659660,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -694,8 +694,9 @@\n }\r\n .content_messger-input .tacvu div{\r\n     padding: 10px;\r\n     background:rgb(112 112 112);\r\n+    border-radius: 50%;\r\n }\r\n .content_messger-input .tacvu input[type=\"file\"]{\r\n     position: absolute;\r\n     opacity: 0;\r\n"
+                },
+                {
+                    "date": 1642525680174,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -693,8 +693,9 @@\n     height: 60px;\r\n }\r\n .content_messger-input .tacvu div{\r\n     padding: 10px;\r\n+    margin-right: 5px;;\r\n     background:rgb(112 112 112);\r\n     border-radius: 50%;\r\n }\r\n .content_messger-input .tacvu input[type=\"file\"]{\r\n"
+                },
+                {
+                    "date": 1642525836270,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -693,10 +693,10 @@\n     height: 60px;\r\n }\r\n .content_messger-input .tacvu div{\r\n     padding: 10px;\r\n-    margin-right: 5px;;\r\n-    background:rgb(112 112 112);\r\n+    margin-right: 5px;\r\n+    background:rgb(210 215 219 / 80%);\r\n     border-radius: 50%;\r\n }\r\n .content_messger-input .tacvu input[type=\"file\"]{\r\n     position: absolute;\r\n"
+                },
+                {
+                    "date": 1642525901429,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -696,8 +696,9 @@\n     padding: 10px;\r\n     margin-right: 5px;\r\n     background:rgb(210 215 219 / 80%);\r\n     border-radius: 50%;\r\n+    font-size: 20px;\r\n }\r\n .content_messger-input .tacvu input[type=\"file\"]{\r\n     position: absolute;\r\n     opacity: 0;\r\n"
+                },
+                {
+                    "date": 1642525944110,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -651,8 +651,9 @@\n     overflow: hidden;\r\n     height: 100vh;\r\n     position: fixed;\r\n     display: flex;\r\n+    border: 1px solid #ccc;\r\n }\r\n .content_messger-main{\r\n     width: 700px;\r\n     position: relative;\r\n"
+                },
+                {
+                    "date": 1642525957630,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -651,9 +651,9 @@\n     overflow: hidden;\r\n     height: 100vh;\r\n     position: fixed;\r\n     display: flex;\r\n-    border: 1px solid #ccc;\r\n+    \r\n }\r\n .content_messger-main{\r\n     width: 700px;\r\n     position: relative;\r\n@@ -680,8 +680,9 @@\n     display: flex;\r\n     position: fixed;\r\n     bottom: 0px;\r\n     width: 700px;\r\n+    border: 1px solid #ccc;\r\n }\r\n .content_messger-input .tacvu, .sender{\r\n     display: flex;\r\n     padding: 10px;\r\n"
+                },
+                {
+                    "date": 1642525969396,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -708,9 +708,9 @@\n }\r\n .content_messger-input input[type=\"text\"]{\r\n     width: 100%;\r\n     padding: 10px;\r\n-    border: 1px solid #ccc;\r\n+    border: none;\r\n     font: 1.05em sans-serif;\r\n }\r\n .content_messger-header img{\r\n     width: 50px;\r\n"
+                },
+                {
+                    "date": 1642526032312,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -688,19 +688,22 @@\n     padding: 10px;\r\n     align-items: center;\r\n     justify-content: center;\r\n     font: 1.05em sans-serif;\r\n+   \r\n }\r\n .sender{\r\n     width: 60px;\r\n     height: 60px;\r\n+    cursor: pointer;\r\n }\r\n .content_messger-input .tacvu div{\r\n     padding: 10px;\r\n     margin-right: 5px;\r\n     background:rgb(210 215 219 / 80%);\r\n     border-radius: 50%;\r\n     font-size: 20px;\r\n+    cursor: pointer;\r\n }\r\n .content_messger-input .tacvu input[type=\"file\"]{\r\n     position: absolute;\r\n     opacity: 0;\r\n"
+                },
+                {
+                    "date": 1642526428470,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -703,8 +703,15 @@\n     border-radius: 50%;\r\n     font-size: 20px;\r\n     cursor: pointer;\r\n }\r\n+.hiddenmessger{\r\n+    position: absolute;\r\n+    right: 0;\r\n+    width: 50px;\r\n+    height: 50px;\r\n+    background: #E74C3c;\r\n+}\r\n .content_messger-input .tacvu input[type=\"file\"]{\r\n     position: absolute;\r\n     opacity: 0;\r\n     bottom: -1000px;\r\n"
+                },
+                {
+                    "date": 1642526469580,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -709,8 +709,13 @@\n     right: 0;\r\n     width: 50px;\r\n     height: 50px;\r\n     background: #E74C3c;\r\n+    display: flex;\r\n+    align-items: center;\r\n+    justify-content: center;\r\n+    font: 1.25em sans-serif;\r\n+    color: #fff;\r\n }\r\n .content_messger-input .tacvu input[type=\"file\"]{\r\n     position: absolute;\r\n     opacity: 0;\r\n"
+                },
+                {
+                    "date": 1642526491558,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -714,8 +714,10 @@\n     align-items: center;\r\n     justify-content: center;\r\n     font: 1.25em sans-serif;\r\n     color: #fff;\r\n+    border-radius: 50%;\r\n+    margin: 10px;\r\n }\r\n .content_messger-input .tacvu input[type=\"file\"]{\r\n     position: absolute;\r\n     opacity: 0;\r\n"
+                },
+                {
+                    "date": 1642526500570,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -716,8 +716,9 @@\n     font: 1.25em sans-serif;\r\n     color: #fff;\r\n     border-radius: 50%;\r\n     margin: 10px;\r\n+    cursor: pointer;\r\n }\r\n .content_messger-input .tacvu input[type=\"file\"]{\r\n     position: absolute;\r\n     opacity: 0;\r\n"
+                },
+                {
+                    "date": 1642526937504,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -738,8 +738,9 @@\n }\r\n .content_messger-profile{\r\n     height: 100%;\r\n     position: relative;\r\n+    width: 320px;\r\n }\r\n .content_messger-profile img{\r\n     width: 200px;\r\n }\r\n"
+                },
+                {
+                    "date": 1642527270161,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -742,8 +742,9 @@\n     width: 320px;\r\n }\r\n .content_messger-profile img{\r\n     width: 200px;\r\n+    height: 260px;\r\n }\r\n @media screen and (max-width: 760px) {\r\n     .nav{\r\n         display: none;\r\n"
+                },
+                {
+                    "date": 1642527327371,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -741,9 +741,10 @@\n     position: relative;\r\n     width: 320px;\r\n }\r\n .content_messger-profile img{\r\n-    width: 200px;\r\n+    object-fit: cover;\r\n+    width: 100%;\r\n     height: 260px;\r\n }\r\n @media screen and (max-width: 760px) {\r\n     .nav{\r\n"
+                },
+                {
+                    "date": 1642533852285,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -695,9 +695,9 @@\n     width: 60px;\r\n     height: 60px;\r\n     cursor: pointer;\r\n }\r\n-.content_messger-input .tacvu div{\r\n+.content_messger-input .tacvu label{\r\n     padding: 10px;\r\n     margin-right: 5px;\r\n     background:rgb(210 215 219 / 80%);\r\n     border-radius: 50%;\r\n"
+                },
+                {
+                    "date": 1642534607079,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -745,8 +745,21 @@\n     object-fit: cover;\r\n     width: 100%;\r\n     height: 260px;\r\n }\r\n+.imgshowinput{\r\n+    position: absolute;\r\n+    width: 500\r\n+px\r\n+;\r\n+    height: 100\r\n+px\r\n+;\r\n+    top: -100\r\n+px\r\n+;\r\n+    overflow: hidden;\r\n+}\r\n @media screen and (max-width: 760px) {\r\n     .nav{\r\n         display: none;\r\n     }\r\n"
+                },
+                {
+                    "date": 1642534614762,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -747,17 +747,11 @@\n     height: 260px;\r\n }\r\n .imgshowinput{\r\n     position: absolute;\r\n-    width: 500\r\n-px\r\n-;\r\n-    height: 100\r\n-px\r\n-;\r\n-    top: -100\r\n-px\r\n-;\r\n+    width: 500px;\r\n+    height: 100px;\r\n+    top: -100px;\r\n     overflow: hidden;\r\n }\r\n @media screen and (max-width: 760px) {\r\n     .nav{\r\n"
+                },
+                {
+                    "date": 1642534766489,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -751,9 +751,12 @@\n     width: 500px;\r\n     height: 100px;\r\n     top: -100px;\r\n     overflow: hidden;\r\n+    left: 50%;\r\n+    transform: translate(-50%, 0);\r\n }\r\n+}\r\n @media screen and (max-width: 760px) {\r\n     .nav{\r\n         display: none;\r\n     }\r\n"
+                },
+                {
+                    "date": 1642534818180,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -754,9 +754,17 @@\n     overflow: hidden;\r\n     left: 50%;\r\n     transform: translate(-50%, 0);\r\n }\r\n+.imgshowinput div{\r\n+\r\n }\r\n+.imgshowinput div img {\r\n+\r\n+}\r\n+.imgshowinput div .icon{\r\n+    \r\n+}\r\n @media screen and (max-width: 760px) {\r\n     .nav{\r\n         display: none;\r\n     }\r\n"
+                },
+                {
+                    "date": 1642535133220,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -746,11 +746,11 @@\n     width: 100%;\r\n     height: 260px;\r\n }\r\n .imgshowinput{\r\n+    background: white;\r\n     position: absolute;\r\n     width: 500px;\r\n-    height: 100px;\r\n     top: -100px;\r\n     overflow: hidden;\r\n     left: 50%;\r\n     transform: translate(-50%, 0);\r\n@@ -761,9 +761,9 @@\n .imgshowinput div img {\r\n \r\n }\r\n .imgshowinput div .icon{\r\n-    \r\n+\r\n }\r\n @media screen and (max-width: 760px) {\r\n     .nav{\r\n         display: none;\r\n"
+                },
+                {
+                    "date": 1642535158483,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -750,9 +750,9 @@\n     background: white;\r\n     position: absolute;\r\n     width: 500px;\r\n     top: -100px;\r\n-    overflow: hidden;\r\n+    overflow: scroll;\r\n     left: 50%;\r\n     transform: translate(-50%, 0);\r\n }\r\n .imgshowinput div{\r\n"
+                },
+                {
+                    "date": 1642535180708,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -753,8 +753,9 @@\n     top: -100px;\r\n     overflow: scroll;\r\n     left: 50%;\r\n     transform: translate(-50%, 0);\r\n+    display: flex;\r\n }\r\n .imgshowinput div{\r\n \r\n }\r\n"
+                },
+                {
+                    "date": 1642535403857,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -749,9 +749,9 @@\n .imgshowinput{\r\n     background: white;\r\n     position: absolute;\r\n     width: 500px;\r\n-    top: -100px;\r\n+    top: -130px;\r\n     overflow: scroll;\r\n     left: 50%;\r\n     transform: translate(-50%, 0);\r\n     display: flex;\r\n"
+                },
+                {
+                    "date": 1642535445463,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -759,9 +759,13 @@\n .imgshowinput div{\r\n \r\n }\r\n .imgshowinput div img {\r\n-\r\n+    height: 100px;\r\n+    width: 100px;\r\n+    object-fit: cover;\r\n+    border: 1px solid #ccc;\r\n+    border-radius: 36px;\r\n }\r\n .imgshowinput div .icon{\r\n \r\n }\r\n"
+                },
+                {
+                    "date": 1642535452045,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -763,9 +763,9 @@\n     height: 100px;\r\n     width: 100px;\r\n     object-fit: cover;\r\n     border: 1px solid #ccc;\r\n-    border-radius: 36px;\r\n+    border-radius: 10px;\r\n }\r\n .imgshowinput div .icon{\r\n \r\n }\r\n"
+                },
+                {
+                    "date": 1642535464270,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -756,9 +756,9 @@\n     transform: translate(-50%, 0);\r\n     display: flex;\r\n }\r\n .imgshowinput div{\r\n-\r\n+    padding: 10px;\r\n }\r\n .imgshowinput div img {\r\n     height: 100px;\r\n     width: 100px;\r\n"
+                },
+                {
+                    "date": 1642535477741,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -757,8 +757,9 @@\n     display: flex;\r\n }\r\n .imgshowinput div{\r\n     padding: 10px;\r\n+    display: flex;\r\n }\r\n .imgshowinput div img {\r\n     height: 100px;\r\n     width: 100px;\r\n"
+                },
+                {
+                    "date": 1642535485935,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -767,9 +767,9 @@\n     border: 1px solid #ccc;\r\n     border-radius: 10px;\r\n }\r\n .imgshowinput div .icon{\r\n-\r\n+    position: absolute;\r\n }\r\n @media screen and (max-width: 760px) {\r\n     .nav{\r\n         display: none;\r\n"
+                },
+                {
+                    "date": 1642535502062,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -768,8 +768,9 @@\n     border-radius: 10px;\r\n }\r\n .imgshowinput div .icon{\r\n     position: absolute;\r\n+    cursor: pointer;\r\n }\r\n @media screen and (max-width: 760px) {\r\n     .nav{\r\n         display: none;\r\n"
+                },
+                {
+                    "date": 1642535507524,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -769,8 +769,9 @@\n }\r\n .imgshowinput div .icon{\r\n     position: absolute;\r\n     cursor: pointer;\r\n+    right: 0;\r\n }\r\n @media screen and (max-width: 760px) {\r\n     .nav{\r\n         display: none;\r\n"
+                },
+                {
+                    "date": 1642535516594,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -758,8 +758,9 @@\n }\r\n .imgshowinput div{\r\n     padding: 10px;\r\n     display: flex;\r\n+    position: relative;\r\n }\r\n .imgshowinput div img {\r\n     height: 100px;\r\n     width: 100px;\r\n"
+                },
+                {
+                    "date": 1642535530431,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -771,8 +771,9 @@\n .imgshowinput div .icon{\r\n     position: absolute;\r\n     cursor: pointer;\r\n     right: 0;\r\n+    top: 0;\r\n }\r\n @media screen and (max-width: 760px) {\r\n     .nav{\r\n         display: none;\r\n"
+                },
+                {
+                    "date": 1642535566045,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -772,8 +772,12 @@\n     position: absolute;\r\n     cursor: pointer;\r\n     right: 0;\r\n     top: 0;\r\n+    height: 32px;\r\n+    width: 32px;\r\n+    background-color: rgba(85, 85, 85, 0.418);\r\n+    color: #fff;\r\n }\r\n @media screen and (max-width: 760px) {\r\n     .nav{\r\n         display: none;\r\n"
+                },
+                {
+                    "date": 1642535585067,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -772,12 +772,12 @@\n     position: absolute;\r\n     cursor: pointer;\r\n     right: 0;\r\n     top: 0;\r\n-    height: 32px;\r\n-    width: 32px;\r\n+    padding: 10px;\r\n     background-color: rgba(85, 85, 85, 0.418);\r\n     color: #fff;\r\n+    \r\n }\r\n @media screen and (max-width: 760px) {\r\n     .nav{\r\n         display: none;\r\n"
+                },
+                {
+                    "date": 1642535595352,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -775,8 +775,9 @@\n     top: 0;\r\n     padding: 10px;\r\n     background-color: rgba(85, 85, 85, 0.418);\r\n     color: #fff;\r\n+    border-radius: 50%;\r\n     \r\n }\r\n @media screen and (max-width: 760px) {\r\n     .nav{\r\n"
+                },
+                {
+                    "date": 1642535602146,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -773,9 +773,9 @@\n     cursor: pointer;\r\n     right: 0;\r\n     top: 0;\r\n     padding: 10px;\r\n-    background-color: rgba(85, 85, 85, 0.418);\r\n+    background-color: rgba(85, 85, 85);\r\n     color: #fff;\r\n     border-radius: 50%;\r\n     \r\n }\r\n"
+                },
+                {
+                    "date": 1642535614002,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -776,8 +776,9 @@\n     padding: 10px;\r\n     background-color: rgba(85, 85, 85);\r\n     color: #fff;\r\n     border-radius: 50%;\r\n+    font-size: 16px;\r\n     \r\n }\r\n @media screen and (max-width: 760px) {\r\n     .nav{\r\n"
+                },
+                {
+                    "date": 1642535651118,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -753,9 +753,10 @@\n     top: -130px;\r\n     overflow: scroll;\r\n     left: 50%;\r\n     transform: translate(-50%, 0);\r\n-    display: flex;\r\n+    display: none;\r\n+\r\n }\r\n .imgshowinput div{\r\n     padding: 10px;\r\n     display: flex;\r\n"
+                },
+                {
+                    "date": 1642535747406,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -624,11 +624,9 @@\n     width: 80%;\r\n     max-width: 80%;\r\n     justify-content: space-between;\r\n }\r\n-::-webkit-scrollbar{\r\n-    background: white;\r\n-}\r\n+\r\n .form_register-interest > div {\r\n     padding: 5px;\r\n }\r\n .content_profile .nav_profile-imgavt img{\r\n"
+                },
+                {
+                    "date": 1642535753632,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -775,11 +775,13 @@\n     padding: 10px;\r\n     background-color: rgba(85, 85, 85);\r\n     color: #fff;\r\n     border-radius: 50%;\r\n-    font-size: 16px;\r\n-    \r\n+    font-size: 16px;   \r\n }\r\n+::-webkit-scrollbar{\r\n+    background: white;\r\n+}\r\n @media screen and (max-width: 760px) {\r\n     .nav{\r\n         display: none;\r\n     }\r\n"
+                },
+                {
+                    "date": 1642535759929,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -777,9 +777,9 @@\n     color: #fff;\r\n     border-radius: 50%;\r\n     font-size: 16px;   \r\n }\r\n-::-webkit-scrollbar{\r\n+.imgshowinput::-webkit-scrollbar{\r\n     background: white;\r\n }\r\n @media screen and (max-width: 760px) {\r\n     .nav{\r\n"
+                },
+                {
+                    "date": 1642535786319,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -777,9 +777,12 @@\n     color: #fff;\r\n     border-radius: 50%;\r\n     font-size: 16px;   \r\n }\r\n-.imgshowinput::-webkit-scrollbar{\r\n+.imgshowinput ::-webkit-scrollbar{\r\n+    background: #ccc;\r\n+}\r\n+::-webkit-scrollbar{\r\n     background: white;\r\n }\r\n @media screen and (max-width: 760px) {\r\n     .nav{\r\n"
+                },
+                {
+                    "date": 1642535799379,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -777,14 +777,15 @@\n     color: #fff;\r\n     border-radius: 50%;\r\n     font-size: 16px;   \r\n }\r\n-.imgshowinput ::-webkit-scrollbar{\r\n-    background: #ccc;\r\n-}\r\n+\r\n ::-webkit-scrollbar{\r\n     background: white;\r\n }\r\n+.imgshowinput ::-webkit-scrollbar{\r\n+    background: #ccc!important;\r\n+}\r\n @media screen and (max-width: 760px) {\r\n     .nav{\r\n         display: none;\r\n     }\r\n"
+                },
+                {
+                    "date": 1642535808920,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -781,11 +781,9 @@\n \r\n ::-webkit-scrollbar{\r\n     background: white;\r\n }\r\n-.imgshowinput ::-webkit-scrollbar{\r\n-    background: #ccc!important;\r\n-}\r\n+\r\n @media screen and (max-width: 760px) {\r\n     .nav{\r\n         display: none;\r\n     }\r\n"
+                },
+                {
+                    "date": 1642535837901,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -778,9 +778,9 @@\n     border-radius: 50%;\r\n     font-size: 16px;   \r\n }\r\n \r\n-::-webkit-scrollbar{\r\n+.nav_content::-webkit-scrollbar{\r\n     background: white;\r\n }\r\n \r\n @media screen and (max-width: 760px) {\r\n"
+                },
+                {
+                    "date": 1642535855303,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -778,9 +778,9 @@\n     border-radius: 50%;\r\n     font-size: 16px;   \r\n }\r\n \r\n-.nav_content::-webkit-scrollbar{\r\n+.nav__content-main::-webkit-scrollbar{\r\n     background: white;\r\n }\r\n \r\n @media screen and (max-width: 760px) {\r\n"
+                },
+                {
+                    "date": 1642535891569,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -778,9 +778,9 @@\n     border-radius: 50%;\r\n     font-size: 16px;   \r\n }\r\n \r\n-.nav__content-main::-webkit-scrollbar{\r\n+.nav__content-main::-webkit-scrollbar,.nav_profile::-webkit-scrollbar{\r\n     background: white;\r\n }\r\n \r\n @media screen and (max-width: 760px) {\r\n"
+                },
+                {
+                    "date": 1642618933774,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -656,8 +656,11 @@\n     width: 700px;\r\n     position: relative;\r\n     height: 100%;\r\n     border: 1px solid #ccc;\r\n+    display: flex;\r\n+    flex-direction: column;\r\n+    justify-content: space-between;\r\n }\r\n .content_messger-header{\r\n     height: 60px;\r\n     background-color: #fff;\r\n"
+                },
+                {
+                    "date": 1642619011530,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -677,11 +677,9 @@\n     height: 100%;\r\n }\r\n .content_messger-input{\r\n     background-color: #fff;\r\n-    display: flex;\r\n     position: fixed;\r\n-    bottom: 0px;\r\n     width: 700px;\r\n     border: 1px solid #ccc;\r\n }\r\n .content_messger-input .tacvu, .sender{\r\n"
+                },
+                {
+                    "date": 1642619024231,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -677,9 +677,9 @@\n     height: 100%;\r\n }\r\n .content_messger-input{\r\n     background-color: #fff;\r\n-    position: fixed;\r\n+    display: flex;\r\n     width: 700px;\r\n     border: 1px solid #ccc;\r\n }\r\n .content_messger-input .tacvu, .sender{\r\n"
+                },
+                {
+                    "date": 1642620343915,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -782,9 +782,11 @@\n \r\n .nav__content-main::-webkit-scrollbar,.nav_profile::-webkit-scrollbar{\r\n     background: white;\r\n }\r\n-\r\n+.messger-body-self span{\r\n+    \r\n+}\r\n @media screen and (max-width: 760px) {\r\n     .nav{\r\n         display: none;\r\n     }\r\n"
+                },
+                {
+                    "date": 1642620359608,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -782,11 +782,14 @@\n \r\n .nav__content-main::-webkit-scrollbar,.nav_profile::-webkit-scrollbar{\r\n     background: white;\r\n }\r\n-.messger-body-self span{\r\n+.messger-body-self{\r\n     \r\n }\r\n+.messger-body-self span{\r\n+\r\n+}\r\n @media screen and (max-width: 760px) {\r\n     .nav{\r\n         display: none;\r\n     }\r\n"
+                },
+                {
+                    "date": 1642621280978,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,16 +12,15 @@\n     text-decoration: none;\r\n }\r\n .main{\r\n     background-color: #f0f2f4;\r\n-    height: 100vh;\r\n+    height: 100%;\r\n     width: 100%;\r\n     display: flex;\r\n }\r\n .nav{\r\n     position: relative;\r\n-    max-width: 300px;\r\n-    width: 300px;\r\n+    width: 400px;\r\n     height: 100%;\r\n     border-right: .1px solid gray;\r\n }\r\n .nav__header{\r\n@@ -783,9 +782,9 @@\n .nav__content-main::-webkit-scrollbar,.nav_profile::-webkit-scrollbar{\r\n     background: white;\r\n }\r\n .messger-body-self{\r\n-    \r\n+\r\n }\r\n .messger-body-self span{\r\n \r\n }\r\n"
+                },
+                {
+                    "date": 1642621294508,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n     text-decoration: none;\r\n }\r\n .main{\r\n     background-color: #f0f2f4;\r\n-    height: 100%;\r\n+    height: 100vh;\r\n     width: 100%;\r\n     display: flex;\r\n }\r\n .nav{\r\n"
+                },
+                {
+                    "date": 1642621300306,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n     display: flex;\r\n }\r\n .nav{\r\n     position: relative;\r\n-    width: 400px;\r\n+    width: 300px;\r\n     height: 100%;\r\n     border-right: .1px solid gray;\r\n }\r\n .nav__header{\r\n"
+                },
+                {
+                    "date": 1642621457168,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n     display: flex;\r\n }\r\n .nav{\r\n     position: relative;\r\n-    width: 300px;\r\n+    width: 390px;\r\n     height: 100%;\r\n     border-right: .1px solid gray;\r\n }\r\n .nav__header{\r\n"
+                },
+                {
+                    "date": 1642621473236,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -90,11 +90,8 @@\n    flex-direction: column;\r\n    position: relative;\r\n    height: 150px;\r\n    cursor: pointer;\r\n-   \r\n-   \r\n-\r\n }\r\n .nav__content-main  .connection img{\r\n     width: 100px;\r\n     height: 130px;\r\n"
+                },
+                {
+                    "date": 1642621503299,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -323,13 +323,13 @@\n     max-width: 100%;\r\n }\r\n \r\n .content{\r\n+    width: 100%;\r\n     height: 100%;\r\n     position: relative;\r\n     overflow: hidden; \r\n     text-align: center;\r\n-    flex-basis: 70%;\r\n }\r\n .content__profile,.content_profile{\r\n     position: absolute;\r\n     width: 300px;\r\n"
+                },
+                {
+                    "date": 1642621924996,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -644,9 +644,8 @@\n .content_messger{\r\n     overflow: hidden;\r\n     height: 100vh;\r\n     position: fixed;\r\n-    display: flex;\r\n     \r\n }\r\n .content_messger-main{\r\n     width: 700px;\r\n"
+                },
+                {
+                    "date": 1642621942833,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -643,9 +643,9 @@\n }\r\n .content_messger{\r\n     overflow: hidden;\r\n     height: 100vh;\r\n-    position: fixed;\r\n+    display: flex;\r\n     \r\n }\r\n .content_messger-main{\r\n     width: 700px;\r\n"
+                },
+                {
+                    "date": 1642621967956,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -644,9 +644,9 @@\n .content_messger{\r\n     overflow: hidden;\r\n     height: 100vh;\r\n     display: flex;\r\n-    \r\n+    justify-content: space-between;\r\n }\r\n .content_messger-main{\r\n     width: 700px;\r\n     position: relative;\r\n"
+                },
+                {
+                    "date": 1642621985151,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -647,9 +647,8 @@\n     display: flex;\r\n     justify-content: space-between;\r\n }\r\n .content_messger-main{\r\n-    width: 700px;\r\n     position: relative;\r\n     height: 100%;\r\n     border: 1px solid #ccc;\r\n     display: flex;\r\n@@ -732,9 +731,9 @@\n }\r\n .content_messger-profile{\r\n     height: 100%;\r\n     position: relative;\r\n-    width: 320px;\r\n+    width: 400px;\r\n }\r\n .content_messger-profile img{\r\n     object-fit: cover;\r\n     width: 100%;\r\n"
+                },
+                {
+                    "date": 1642622008548,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -653,8 +653,9 @@\n     border: 1px solid #ccc;\r\n     display: flex;\r\n     flex-direction: column;\r\n     justify-content: space-between;\r\n+    width: 100%;\r\n }\r\n .content_messger-header{\r\n     height: 60px;\r\n     background-color: #fff;\r\n"
+                },
+                {
+                    "date": 1642622024666,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -673,9 +673,9 @@\n }\r\n .content_messger-input{\r\n     background-color: #fff;\r\n     display: flex;\r\n-    width: 700px;\r\n+    width: 100%;\r\n     border: 1px solid #ccc;\r\n }\r\n .content_messger-input .tacvu, .sender{\r\n     display: flex;\r\n"
+                },
+                {
+                    "date": 1642622584091,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -778,13 +778,20 @@\n .nav__content-main::-webkit-scrollbar,.nav_profile::-webkit-scrollbar{\r\n     background: white;\r\n }\r\n .messger-body-self{\r\n-\r\n+    border-radius: 10px;\r\n+    border: 1px;\r\n+    margin-bottom: 8px;\r\n+    align-self: flex-end;\r\n+    line-height: 1.5;\r\n+    font-size: 14px;\r\n+    margin: 10px;\r\n+    padding: 10px;\r\n+    background: white;\r\n+    max-width: 500px;\r\n }\r\n-.messger-body-self span{\r\n \r\n-}\r\n @media screen and (max-width: 760px) {\r\n     .nav{\r\n         display: none;\r\n     }\r\n"
+                },
+                {
+                    "date": 1642622632691,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -669,8 +669,12 @@\n .content_messger-body{\r\n     background-color: #d2d7db;\r\n     width: 100%;\r\n     height: 100%;\r\n+    flex: 1 1;\r\n+    display: flex;\r\n+    flex-direction: column;\r\n+    overflow: auto;\r\n }\r\n .content_messger-input{\r\n     background-color: #fff;\r\n     display: flex;\r\n"
+                },
+                {
+                    "date": 1642625462442,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -719,9 +719,8 @@\n }\r\n .content_messger-input .tacvu input[type=\"file\"]{\r\n     position: absolute;\r\n     opacity: 0;\r\n-    bottom: -1000px;\r\n }\r\n .content_messger-input input[type=\"text\"]{\r\n     width: 100%;\r\n     padding: 10px;\r\n"
+                },
+                {
+                    "date": 1642625630015,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -746,9 +746,9 @@\n .imgshowinput{\r\n     background: white;\r\n     position: absolute;\r\n     width: 500px;\r\n-    top: -130px;\r\n+    bottom: 70px;\r\n     overflow: scroll;\r\n     left: 50%;\r\n     transform: translate(-50%, 0);\r\n     display: none;\r\n"
                 }
             ],
             "date": 1641804653643,

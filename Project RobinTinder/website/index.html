@@ -8,20 +8,21 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>Robin Hẹn hò</title>
     <link rel="stylesheet" href="./css/style.css" />
+    <script type="text/javascript" src = "./js/md5.js"></script>
     <script  type="text/javascript" src ="./js/config.js" ></script>
-
 </head>
 <body>
     <div class="main">
         <aside class="nav">
             <div class="nav__header">
                 <div class="nav__hearder--profile">
-                    
                 </div>
                 <div class="nav__header--contact"></div>
             </div>
             <div class="nav__qc"></div>
             <div class="nav_content">
+            </div>
+            <div class="nav_profile top100">
             </div>
         </aside>
         <div class="content">
@@ -34,9 +35,11 @@
                     <i class='bx bx-chevron-right' onclick="app.plusDivs(1)"></i>
                 </div>
                 <div class="content__tt">
-                    <div class="content__tt-i" style = " color: #ffffff ; border: 1px solid #ffffff;"><i class='bx bx-revision' ></i></div>
-                    <div class="content__tt-i" style = " color:#29e2ba ; border: 1px solid #29e2ba"><i class='bx bx-x'></i></div>
-                    <div class="content__tt-i" style = " color: #fa4159 ;  border: 1px solid #fa4159"><i class='bx bxs-heart'></i></div>
+                    <div class="content__tt-i" id = "js_reload" style = " color: #ffffff ; border: 1px solid #ffffff;"><i class='bx bx-revision' ></i></div>
+                    <div class="content__tt-i" id = "js_notym" style = " color:#29e2ba ; border: 1px solid #29e2ba"><i class='bx bx-x'></i></div>
+                    <div class="content__tt-i" id = "js_tym" style = " color: #fa4159 ;  border: 1px solid #fa4159"><i class='bx bxs-heart'></i></div>
+                    <div class="content__tt-i" id = "js_renderprofile" style = " color: #effa41 ;  border: 1px solid #effa41"><i class='bx bxs-upvote'></i></div>
+                
                 </div>
             </div>
             <div class="content_hd">
@@ -62,8 +65,21 @@
                     <span>Đóng Hồ Sơ</span>
                 </div>
             </div>
+            <div class="content_profile" style="display: none;">
+            </div>
+            <div class="content_messger" style="display: none;">
+                <div class="content_messger-main">  
+                </div>
+                <div class="content_messger-profile">
+                </div>
+
+            </div>
         </div>
     </div>
 </body>
+<script  type="text/javascript" src ="./js/init.js" ></script>
+<script  type="text/javascript" src ="./js/checkLogin.js" ></script>
+<script type="text/javascript" src ="./js/render.js"></script>
+<script type="text/javascript" src ="./js/handerEvent.js"></script>
 <script  type="text/javascript" src ="./js/main.js" ></script>
 </html>

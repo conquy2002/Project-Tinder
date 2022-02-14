@@ -24,6 +24,7 @@ namespace api_Tinder.Data
         public DbSet<api_Tinder.Models.UserConect> UserConect { get; set; }
         public DbSet<api_Tinder.Models.LoginViewModel> LoginViewModel { get; set; }
         public DbSet<api_Tinder.Models.RegistrationModel> RegistrationModel { get; set; }
+        public DbSet<api_Tinder.Models.logintoken> logintoken { get; set; }
 
 
     }

@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.EntityFrameworkCore;
 using api_Tinder.Models;
 using api_Tinder.Data;
 
@@ -21,17 +20,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 
 builder.Services.AddSwaggerGen();
-builder.Services.AddCors(options =>
-{
-    options.AddPolicy(name: "MyPolicy",
-                      builder =>
-                      {
-                          builder.WithOrigins("http://127.0.0.1:5500/website/index.html",
-                                              "http://127.0.0.1:5500/")
-                                .WithMethods("PUT", "DELETE", "GET");
-                      })
-     ;
-});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -41,12 +30,12 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-app.UseCors();
+
 
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
-app.MapControllers().RequireCors("MyPolicy"); ;
+app.MapControllers() ;
 
 app.Run();

@@ -14,7 +14,6 @@ using Microsoft.AspNetCore.Cors;
 
 namespace api_Tinder.Controllers
 {
-    [DisableCors]
     [Route("api/[controller]")]
     [ApiController]
     public class UsersController : ControllerBase

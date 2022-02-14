@@ -1,0 +1,42 @@
+{
+    "sourceFile": "js/checkLogin.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 6,
+            "patches": [
+                {
+                    "date": 1642515555157,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1642608166067,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n             alert(\"Trang web đang bảo trì !! Mong bạn vào lại vào hôm sau :3\");\r\n             console.log(e)\r\n             setCookie(\"UserID\",\" \",time);\r\n             setCookie(\"Token\",\" \",time)\r\n-            app.login = false;\r\n+             return app.login = false;\r\n         }\r\n \r\n         //render api\r\n         app.dataUser = await app.fetch.get(basic_url + Userurl + \"/\"+ getCookie(\"UserID\"))\r\n"
+                },
+                {
+                    "date": 1642608173249,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,11 +26,9 @@\n              return app.login = false;\r\n         }\r\n \r\n         //render api\r\n-        app.dataUser = await app.fetch.get(basic_url + Userurl + \"/\"+ getCookie(\"UserID\"))\r\n-        app.dataUser.gender  ? app.dataUser.gender : app.dataUser.gender =  \"Ẩn\"; \r\n-        app.dataUser.avatar ?  app.avt = basic_url + ImagerUrl + \"?name=\"+ app.dataUser.avatar : app.avt = \"https://scr.vn/wp-content/uploads/2020/07/Avatar-Facebook-tr%E1%BA%AFng.jpg\";\r\n+       \r\n         return app.login;\r\n     }\r\n    \r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642608220890,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,5 @@\n app.checklogin = async ()=>{\r\n-    app.dataUser = \"\"\r\n     var token = getCookie(\"Token\");\r\n     if(token == ''){\r\n         return app.login = false;\r\n     }else{\r\n@@ -24,11 +23,8 @@\n             setCookie(\"UserID\",\" \",time);\r\n             setCookie(\"Token\",\" \",time)\r\n              return app.login = false;\r\n         }\r\n-\r\n-        //render api\r\n-       \r\n         return app.login;\r\n     }\r\n    \r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642608233972,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,12 +11,12 @@\n                 app.login = false;\r\n                 setCookie(\"UserID\",\" \",time);\r\n                 setCookie(\"Token\",\" \",time);\r\n                 alert(\"Tài Khoản k tồn tại\")\r\n-                app.login = false;        \r\n+                return app.login = false;        \r\n             }else{\r\n                 setCookie(\"UserID\",data.message,time);\r\n-                app.login = true;\r\n+                return app.login = true;\r\n             }\r\n         }catch(e){\r\n             alert(\"Trang web đang bảo trì !! Mong bạn vào lại vào hôm sau :3\");\r\n             console.log(e)\r\n@@ -25,6 +25,5 @@\n              return app.login = false;\r\n         }\r\n         return app.login;\r\n     }\r\n-   \r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642608245147,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,7 +23,6 @@\n             setCookie(\"UserID\",\" \",time);\r\n             setCookie(\"Token\",\" \",time)\r\n              return app.login = false;\r\n         }\r\n-        return app.login;\r\n     }\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642608251134,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,8 +21,8 @@\n             alert(\"Trang web đang bảo trì !! Mong bạn vào lại vào hôm sau :3\");\r\n             console.log(e)\r\n             setCookie(\"UserID\",\" \",time);\r\n             setCookie(\"Token\",\" \",time)\r\n-             return app.login = false;\r\n+            return app.login = false;\r\n         }\r\n     }\r\n }\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1642515555157,
+            "name": "Commit-0",
+            "content": "app.checklogin = async ()=>{\r\n    app.dataUser = \"\"\r\n    var token = getCookie(\"Token\");\r\n    if(token == ''){\r\n        return app.login = false;\r\n    }else{\r\n        var time = new Date().getTime();\r\n        var data = \"\"\r\n        try{\r\n            data = await app.fetch.get(basic_url + getUser +\"?user=\"+token);\r\n            if(data.status == \"Error\") {\r\n                app.login = false;\r\n                setCookie(\"UserID\",\" \",time);\r\n                setCookie(\"Token\",\" \",time);\r\n                alert(\"Tài Khoản k tồn tại\")\r\n                app.login = false;        \r\n            }else{\r\n                setCookie(\"UserID\",data.message,time);\r\n                app.login = true;\r\n            }\r\n        }catch(e){\r\n            alert(\"Trang web đang bảo trì !! Mong bạn vào lại vào hôm sau :3\");\r\n            console.log(e)\r\n            setCookie(\"UserID\",\" \",time);\r\n            setCookie(\"Token\",\" \",time)\r\n            app.login = false;\r\n        }\r\n\r\n        //render api\r\n        app.dataUser = await app.fetch.get(basic_url + Userurl + \"/\"+ getCookie(\"UserID\"))\r\n        app.dataUser.gender  ? app.dataUser.gender : app.dataUser.gender =  \"Ẩn\"; \r\n        app.dataUser.avatar ?  app.avt = basic_url + ImagerUrl + \"?name=\"+ app.dataUser.avatar : app.avt = \"https://scr.vn/wp-content/uploads/2020/07/Avatar-Facebook-tr%E1%BA%AFng.jpg\";\r\n        return app.login;\r\n    }\r\n   \r\n}"
+        }
+    ]
+}

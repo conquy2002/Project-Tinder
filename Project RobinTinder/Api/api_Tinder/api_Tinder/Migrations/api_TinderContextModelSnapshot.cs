@@ -70,6 +70,27 @@ namespace api_Tinder.Migrations
                     b.ToTable("Interest");
                 });
 
+            modelBuilder.Entity("api_Tinder.Models.logintoken", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("token")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("userID")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("logintoken");
+                });
+
             modelBuilder.Entity("api_Tinder.Models.LoginViewModel", b =>
                 {
                     b.Property<int>("ID")

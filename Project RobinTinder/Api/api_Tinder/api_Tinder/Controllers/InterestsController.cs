@@ -12,7 +12,6 @@ using Microsoft.AspNetCore.Cors;
 
 namespace api_Tinder.Controllers
 {
-    
     [Route("api/[controller]")]
     [ApiController]
     public class InterestsController : ControllerBase
@@ -26,7 +25,6 @@ namespace api_Tinder.Controllers
 
         // GET: api/Interests
         [HttpGet]
-        [DisableCors]
         public async Task<ActionResult<IEnumerable<Interest>>> GetInterest()
         {
             return await _context.Interest.ToListAsync();
